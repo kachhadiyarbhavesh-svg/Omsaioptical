@@ -3,286 +3,651 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Sai Optical - Navigation Bar</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Om Sai Optical Surat | Pure CSS @keyframes Eyewear Experience</title>
+<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler. Latest designs of fancy frames, sunglasses, computerized eye testing, and progressive lenses.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 body {
-  background: #080808;
+  background: #040404;
   color: #fff;
-  min-height: 100vh;
+  padding-bottom: 70px;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* =========================================
-   NAVBAR & HOVER EFFECTS CSS
+   PURE CSS @KEYFRAMES ANIMATIONS
 ========================================= */
 
-.custom-navbar-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(12, 12, 12, 0.85);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.1);
-  z-index: 1000;
-  transition: all 0.3s ease;
+/* 1. Ambient Background Orb Drift */
+@keyframes orbMoveOne {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(120px, 80px) scale(1.2); }
+  100% { transform: translate(-60px, 140px) scale(0.9); }
 }
 
-.nav-container {
+@keyframes orbMoveTwo {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-100px, -60px) scale(1.15); }
+  100% { transform: translate(80px, -100px) scale(0.95); }
+}
+
+/* 2. Text Shimmer Animation */
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 3. 3D Floating Animations */
+@keyframes float3D {
+  0% { transform: translateY(0px) rotateX(0deg); }
+  50% { transform: translateY(-10px) rotateX(3deg); }
+  100% { transform: translateY(0px) rotateX(0deg); }
+}
+
+@keyframes floatReverse {
+  0% { transform: translateY(0px) rotateY(0deg); }
+  50% { transform: translateY(8px) rotateY(-3deg); }
+  100% { transform: translateY(0px) rotateY(0deg); }
+}
+
+/* 4. Rotating Glowing Neon Border */
+@keyframes spinGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 5. Pulsing Button Glow */
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), 0 5px 0 #73570a;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 5px 0 #73570a;
+  }
+}
+
+@keyframes waPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.3), 0 5px 0 #0d5c2a;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.7), 0 5px 0 #0d5c2a;
+  }
+}
+
+/* Background Animated Light Orbs */
+.bg-orb-1, .bg-orb-2 {
+  position: fixed;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-orb-1 {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(0,0,0,0) 70%);
+  top: 5%;
+  left: -100px;
+  animation: orbMoveOne 16s infinite ease-in-out;
+}
+.bg-orb-2 {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.18) 0%, rgba(0,0,0,0) 70%);
+  bottom: 10%;
+  right: -100px;
+  animation: orbMoveTwo 20s infinite ease-in-out;
+}
+
+.container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+header {
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(16px);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
 }
-
-/* 1. Brand Logo Hover Effect */
-.brand-logo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.logo {
   font-size: 21px;
-  font-weight: 800;
-  color: #fff;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ffffff, #ffd700, #d4af37, #ffffff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 6s ease infinite;
+  text-decoration: none;
   letter-spacing: 0.5px;
-  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.brand-logo .om-symbol {
-  color: #ffd700;
-  font-size: 24px;
-  transition: transform 0.4s ease;
-}
-
-.brand-logo:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
-}
-
-.brand-logo:hover .om-symbol {
-  transform: rotate(15deg) scale(1.1);
-}
-
-/* 2. Menu Links with Animated Glow Underlines */
-.nav-menu ul {
+nav ul {
   display: flex;
   list-style: none;
-  gap: 28px;
+  gap: 20px;
   align-items: center;
 }
-
-.nav-link {
-  position: relative;
+nav ul li a {
   text-decoration: none;
-  color: #d6d6d6;
-  font-size: 14.5px;
+  color: #e0e0e0;
+  font-size: 14px;
   font-weight: 500;
-  padding: 6px 0;
-  transition: color 0.3s ease;
+  transition: all 0.3s;
 }
-
-/* Expanding glowing line on hover */
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(90deg, #ffd700, #d4af37);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.nav-link:hover {
+nav ul li a:hover {
   color: #ffd700;
-  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-  left: 0;
+/* Tactile Keyframe Buttons */
+.btn-gold {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #000 !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 5px 0 #73570a, 0 10px 20px rgba(0,0,0,0.6);
+  animation: buttonPulse 3s infinite ease-in-out;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-gold:hover {
+  transform: translateY(-3px);
+}
+.btn-gold:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #73570a;
 }
 
-/* 3. Action Buttons with 3D Depth & Glow */
-.nav-actions {
+.btn-wa {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgba(37, 211, 102, 0.12);
+  color: #25d366 !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  border: 1px solid #25d366;
+  box-shadow: 0 5px 0 #0d5c2a, 0 10px 20px rgba(0,0,0,0.6);
+  animation: waPulse 3.5s infinite ease-in-out;
+  transition: all 0.2s;
+}
+.btn-wa:hover {
+  background: #25d366;
+  color: #000 !important;
+  transform: translateY(-3px);
+}
+.btn-wa:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #0d5c2a;
+}
+
+/* 3D Animated Hero */
+.hero {
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  gap: 12px;
+  position: relative;
+  padding: 60px 0;
+  background: radial-gradient(circle at center, rgba(30, 25, 12, 0.6) 0%, rgba(4, 4, 4, 0.95) 80%);
 }
-
-.btn-nav-call {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.06);
+.hero-content {
+  max-width: 680px;
+  animation: float3D 6s infinite ease-in-out;
+}
+.hero-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid #ffd700;
+  border-radius: 20px;
   color: #ffd700;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-nav-call:hover {
-  background: #ffd700;
-  color: #000;
-  box-shadow: 0 0 18px rgba(255, 215, 0, 0.7);
-  transform: translateY(-2px);
-}
-
-.btn-nav-wa {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 18px;
-  background: #25d366;
-  color: #fff;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+.hero-content h1 {
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 900;
+}
+.hero-content h1 span {
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+.hero-content p {
+  margin: 20px 0 30px;
+  font-size: 16px;
+  color: #c0c0c0;
+  line-height: 1.6;
 }
 
-.btn-nav-wa:hover {
-  background: #1ebc59;
-  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.7);
-  transform: translateY(-2px) scale(1.03);
+/* Section */
+.section {
+  padding: 85px 0;
+  position: relative;
+}
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #ffd700;
+  margin-bottom: 45px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
-/* 4. Mobile Hamburger Button */
-.nav-toggle-btn {
+.services-grid, .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* Keyframe Animated Glowing Cards */
+.anim-card {
+  position: relative;
+  background: #0d0d0f;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: float3D 6s infinite ease-in-out;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.anim-card:nth-child(even) {
+  animation: floatReverse 7s infinite ease-in-out;
+}
+.anim-card:hover {
+  border-color: #ffd700;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.35);
+}
+.card-icon {
+  font-size: 46px;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+.anim-card h3 {
+  font-size: 18px;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+.anim-card p {
+  font-size: 13.5px;
+  color: #aaa;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Product Cards */
+.product-card {
+  background: #0d0d0f;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s, border-color 0.3s;
+  animation: float3D 8s infinite ease-in-out;
+}
+.product-card:nth-child(even) {
+  animation: floatReverse 8.5s infinite ease-in-out;
+}
+.product-card:hover {
+  border-color: #ffd700;
+  transform: translateY(-8px) scale(1.03);
+}
+.product-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.product-card:hover img {
+  transform: scale(1.08);
+}
+.product-card h3 {
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
+  color: #ffd700;
+}
+
+/* Google Drive Container */
+.drive-box {
+  background: #0d0d0f;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+}
+.drive-frame {
+  width: 100%;
+  height: 500px;
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* Contact Card */
+.contact-card {
+  background: linear-gradient(145deg, #15120c 0%, #080808 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 16px;
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.85);
+  max-width: 800px;
+  margin: auto;
+  animation: float3D 6.5s infinite ease-in-out;
+}
+.contact-card p {
+  font-size: 15px;
+  margin: 12px 0;
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  background: #020202;
+  padding: 30px 15px;
+  text-align: center;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+footer h3 {
+  color: #ffd700;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/* Mobile Sticky Bar */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(8, 8, 8, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 2px solid #ffd700;
+  z-index: 10000;
+  justify-content: space-around;
+  padding: 8px 6px;
+}
+.mobile-bar-btn {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 4px;
+  border-radius: 4px;
+  margin: 0 3px;
+}
+.mobile-bar-btn.call-btn { background: #007bff; }
+.mobile-bar-btn.wa-btn { background: #25d366; }
+.mobile-bar-btn.book-btn { background: #ffd700; color: #000; }
+
+/* Responsive Hamburger */
+.menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 26px;
-  height: 19px;
+  height: 18px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
 }
-
-.nav-toggle-btn span {
+.menu-toggle span {
   display: block;
   width: 100%;
   height: 2.5px;
-  background: #ffd700;
+  background-color: #ffd700;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
-/* Mobile Menu Dropdown */
-.mobile-dropdown {
-  display: none;
-  flex-direction: column;
-  background: rgba(8, 8, 8, 0.98);
-  border-top: 1px solid rgba(212, 175, 55, 0.3);
-  padding: 20px 5%;
-  gap: 15px;
-}
-
-.mobile-dropdown.active {
-  display: flex;
-}
-
-.mobile-dropdown a {
-  text-decoration: none;
-  color: #e0e0e0;
-  font-size: 15px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.mobile-dropdown a:hover {
-  color: #ffd700;
-}
-
-/* Responsive Styles */
-@media (max-width: 880px) {
-  .nav-menu, .nav-actions {
+@media(max-width: 768px) {
+  .menu-toggle { display: flex; }
+  nav ul {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 6, 6, 0.98);
+    border-bottom: 1px solid #ffd700;
+    padding: 20px 0;
+    gap: 15px;
   }
-  .nav-toggle-btn {
-    display: flex;
-  }
+  nav ul.active { display: flex; }
+  .hero-content h1 { font-size: 32px; }
+  .section { padding: 50px 0; }
+  .section-title { font-size: 22px; }
+  .mobile-bottom-bar { display: flex; }
+  .drive-frame { height: 380px; }
 }
 </style>
 </head>
 <body>
 
-<header class="custom-navbar-header">
-  <div class="nav-container">
-    
-    <a href="#" class="brand-logo">
-      <span class="om-symbol">ॐ</span> Om Sai Optical
-    </a>
+<div class="bg-orb-1"></div>
+<div class="bg-orb-2"></div>
 
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="#" class="nav-link active">Home</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#products" class="nav-link">Products</a></li>
-        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="nav-actions">
-      <a href="tel:09662504082" class="btn-nav-call">
-        📞 096625 04082
-      </a>
-      <a href="https://wa.me/919662504082" target="_blank" class="btn-nav-wa">
-        💬 WhatsApp
-      </a>
-    </div>
-
-    <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle navigation">
+<header>
+  <div class="container navbar">
+    <a href="#" class="logo">ॐ OM SAI OPTICAL</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
     </button>
-  </div>
-
-  <div class="mobile-dropdown" id="mobileDropdown">
-    <a href="#" onclick="closeMobileNav()">Home</a>
-    <a href="#services" onclick="closeMobileNav()">Services</a>
-    <a href="#products" onclick="closeMobileNav()">Products</a>
-    <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
-    <a href="#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="tel:09662504082" style="color: #ffd700; font-weight: 600;">📞 Call: 096625 04082</a>
-    <a href="https://wa.me/919662504082" target="_blank" style="color: #25d366; font-weight: 600;">💬 WhatsApp Inquiry</a>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#" onclick="closeMenu()">Home</a></li>
+        <li><a href="#services" onclick="closeMenu()">Services</a></li>
+        <li><a href="#products" onclick="closeMenu()">Products</a></li>
+        <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        <li><a href="https://forms.gle/iogEx9uxJSqXksSg8" target="_blank" class="btn-gold" style="padding: 6px 14px; font-size: 11px;" onclick="closeMenu()">Book Eye Test</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const mobileDropdown = document.getElementById('mobileDropdown');
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-badge">✨ OPTICAL WHOLESALER & FANCY FRAMES</div>
+    <h1>SEE <span>BETTER</span><br>LOOK <span>BETTER</span></h1>
+    <p>We are selling latest design or various types of sunglasses and fancy frems with advanced computerized eye testing and precision lens fitting.</p>
+    <a href="#appointment" class="btn-gold">Book Eye Test</a>
+    <a href="https://wa.me/919662504082" target="_blank" class="btn-wa" style="margin-left: 10px;">WhatsApp Us</a>
+  </div>
+</section>
 
-  navToggle.addEventListener('click', () => {
-    mobileDropdown.classList.toggle('active');
+<section class="section" id="services">
+  <h2 class="section-title">Keyframe Animated Services</h2>
+  <div class="container services-grid">
+    
+    <div class="anim-card">
+      <div>
+        <div class="card-icon">👁️</div>
+        <h3>Eye Testing</h3>
+        <p>Computerized precision eye examination with accurate digital analysis.</p>
+      </div>
+      <a href="#appointment" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">Book Eye Test</a>
+    </div>
+
+    <div class="anim-card">
+      <div>
+        <div class="card-icon">👓</div>
+        <h3>Progressive Lenses</h3>
+        <p>Smooth multifocal transition for distance, intermediate, and reading vision.</p>
+      </div>
+      <a href="#appointment" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">Consultation</a>
+    </div>
+
+    <div class="anim-card">
+      <div>
+        <div class="card-icon">🛡️</div>
+        <h3>Blue Cut & UV Shield</h3>
+        <p>Anti-glare screen protection guarding against mobile, laptop, and digital strain.</p>
+      </div>
+      <a href="#products" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">View Lenses</a>
+    </div>
+
+    <div class="anim-card">
+      <div>
+        <div class="card-icon">🕶️</div>
+        <h3>Fancy Frames Wholesale</h3>
+        <p>Extensive wholesale & retail collections of stylish, lightweight fancy frames.</p>
+      </div>
+      <a href="#products" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">Explore Frames</a>
+    </div>
+
+    <div class="anim-card">
+      <div>
+        <div class="card-icon">👁️‍🗨️</div>
+        <h3>Contact Lenses</h3>
+        <p>Daily disposable, monthly wear, and cosmetic colored high-moisture contact lenses.</p>
+      </div>
+      <a href="#products" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">View Lenses</a>
+    </div>
+
+    <div class="anim-card">
+      <div>
+        <div class="card-icon">🔧</div>
+        <h3>Frame Servicing & Repair</h3>
+        <p>Instant precision alignment, nose-pad changes, screw fixes, and fitting.</p>
+      </div>
+      <a href="#contact" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">Store Info</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="products">
+  <h2 class="section-title">Our Collection</h2>
+  <div class="container products-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1577803645773-f96470509666" alt="Spectacles">
+      <h3>Fancy Frames & Spectacles</h3>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083" alt="Sunglasses">
+      <h3>Latest Design Sunglasses</h3>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1589782182703-2aaa69037b5b" alt="Contact Lenses">
+      <h3>Contact Lenses</h3>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67" alt="Kids Frames">
+      <h3>Kids Eyewear Series</h3>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <h2 class="section-title">Live Drive Showcase</h2>
+  <div class="container">
+    <div class="drive-box">
+      <iframe 
+        class="drive-frame" 
+        src="https://drive.google.com/embeddedfolderview?id=1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5#grid" 
+        allow="autoplay">
+      </iframe>
+    </div>
+    <div style="text-align:center; margin-top: 25px;">
+      <a href="https://drive.google.com/drive/folders/1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5?usp=sharing" target="_blank" class="btn-gold">
+        📁 Open Full Gallery in Google Drive
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="appointment">
+  <h2 class="section-title">Book Eye Examination</h2>
+  <div class="container">
+    <div class="drive-box">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLyltFJeSRjJfuvuffiaA2Z_zoQkYbOD4rHvVHRpRMNgBEQg/viewform?usp=dialog" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:8px; background:#fff;">Loading...</iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2 class="section-title">Visit Our Store</h2>
+  <div class="container">
+    <div class="contact-card">
+      <p style="font-size: 18px; font-weight: 800; color: #ffd700;">Om Sai Optical Surat</p>
+      <p>📍 22 shreenathji society 2 Nilgiri Godadhra Road, Surat, Gujarat 394210, India</p>
+      <p>📞 Phone: <a href="tel:09662504082" style="color: #ffd700; text-decoration: none; font-weight: 700;">+91 96625 04082</a></p>
+      <p>📧 Email: kachhadiyarbhavesh@gmail.com</p>
+      <p>🏙️ Service Area: Nilgiri, Limbayat, Surat, Gujarat 395012, India</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>OM SAI OPTICAL</h3>
+  <p>Optical Wholesaler & Retail Eyewear Store</p>
+  <p>© 2026 All Rights Reserved</p>
+</footer>
+
+<div class="mobile-bottom-bar">
+  <a href="tel:09662504082" class="mobile-bar-btn call-btn">📞 Call</a>
+  <a href="https://wa.me/919662504082?text=Hello%20Om%20Sai%20Optical,%20I%20have%20an%20inquiry." target="_blank" class="mobile-bar-btn wa-btn">💬 WhatsApp</a>
+  <a href="#appointment" class="mobile-bar-btn book-btn">📝 Book Test</a>
+</div>
+
+<script>
+  // Mobile Hamburger Toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
   });
 
-  function closeMobileNav() {
-    mobileDropdown.classList.remove('active');
+  function closeMenu() {
+    navMenu.classList.remove('active');
   }
 </script>
 
