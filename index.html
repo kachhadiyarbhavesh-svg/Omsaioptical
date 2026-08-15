@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Sai Optical Surat | 3D Animated Eyewear Experience</title>
-<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler. Latest designs of fancy frames, sunglasses, eye testing, and progressive lenses.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Om Sai Optical Surat | Cyber 3D Animated Eyewear Hub</title>
+<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler. Latest designs of fancy frames, sunglasses, computerized eye testing, and progressive lenses.">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
 <style>
@@ -19,68 +19,71 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background: #030303;
+  background: #020203;
   color: #fff;
-  padding-bottom: 65px;
+  padding-bottom: 70px;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Background Animated Canvas */
-#particles-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
+/* Futuristic Fonts */
+h1, h2, h3, .logo, .section-title {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1.5px;
 }
 
-/* Animated Ambient Glow Spheres */
-.glow-sphere-1, .glow-sphere-2 {
+/* Interactive Cursor Glow Aura */
+.cursor-aura {
   position: fixed;
-  width: 500px;
-  height: 500px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
-  filter: blur(150px);
-  z-index: -2;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(0,0,0,0) 70%);
   pointer-events: none;
-  animation: moveGlow 14s infinite alternate ease-in-out;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: width 0.3s, height 0.3s;
 }
-.glow-sphere-1 {
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(0,0,0,0) 70%);
-  top: 5%;
-  left: -120px;
+
+/* 3D Cyber Perspective Grid Floor */
+.cyber-grid {
+  position: fixed;
+  bottom: -30%;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.12) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(65deg);
+  animation: gridMove 15s linear infinite;
+  z-index: 0;
+  pointer-events: none;
 }
-.glow-sphere-2 {
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(0,0,0,0) 70%);
-  bottom: 10%;
-  right: -120px;
-  animation-duration: 18s;
-}
-@keyframes moveGlow {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(100px, 80px) scale(1.2); }
-  100% { transform: translate(-60px, 140px) scale(0.9); }
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 500px; }
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
-/* Animated Header */
+/* Glowing Holographic Header */
 header {
-  background: rgba(8, 8, 8, 0.85);
-  backdrop-filter: blur(18px);
+  background: rgba(5, 5, 6, 0.85);
+  backdrop-filter: blur(20px);
   padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(212, 175, 55, 0.2);
 }
 .navbar {
   display: flex;
@@ -88,327 +91,298 @@ header {
   align-items: center;
 }
 .logo {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 900;
-  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #aa8010 100%);
-  background-size: 200% auto;
+  background: linear-gradient(135deg, #fff 0%, #ffd700 50%, #d4af37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmerText 4s linear infinite;
   text-decoration: none;
-  letter-spacing: 0.5px;
-}
-@keyframes shimmerText {
-  to { background-position: 200% center; }
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 22px;
+  gap: 20px;
   align-items: center;
 }
 nav ul li a {
   text-decoration: none;
-  color: #e0e0e0;
+  color: #ccc;
+  font-size: 13.5px;
   font-weight: 500;
-  font-size: 14.5px;
-  position: relative;
+  text-transform: uppercase;
   transition: all 0.3s;
-}
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #ffd700;
-  transition: width 0.3s ease;
-}
-nav ul li a:hover::after {
-  width: 100%;
 }
 nav ul li a:hover {
   color: #ffd700;
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
 }
 
-/* 3D Animated Buttons */
-.btn-3d {
+/* Neon Tactile 3D Buttons */
+.btn-neon {
   display: inline-block;
-  padding: 12px 26px;
-  background: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #997819 100%);
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
   color: #000 !important;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 14px;
-  box-shadow: 0 6px 0 #6e540b, 0 12px 25px rgba(0,0,0,0.6);
-  transform: translateY(0);
-  transition: all 0.15s ease-in-out;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: all 0.2s;
   cursor: pointer;
-  animation: pulseBtn 3s infinite ease-in-out;
+  border: none;
 }
-@keyframes pulseBtn {
-  0%, 100% { box-shadow: 0 6px 0 #6e540b, 0 12px 25px rgba(212,175,55,0.3); }
-  50% { box-shadow: 0 6px 0 #6e540b, 0 16px 35px rgba(212,175,55,0.6); }
+.btn-neon:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
 }
-.btn-3d:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 0 #6e540b, 0 18px 30px rgba(212,175,55,0.5);
-}
-.btn-3d:active {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 #6e540b, 0 4px 10px rgba(0,0,0,0.6);
+.btn-neon:active {
+  transform: translateY(2px);
 }
 
-.btn-outline-3d {
+.btn-wa-neon {
   display: inline-block;
-  padding: 12px 26px;
-  background: rgba(37, 211, 102, 0.08);
+  padding: 12px 24px;
+  background: rgba(37, 211, 102, 0.1);
   color: #25d366 !important;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 14px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 6px;
   border: 1px solid #25d366;
-  box-shadow: 0 6px 0 #0d5c2a, 0 10px 20px rgba(0,0,0,0.6);
-  transition: all 0.15s ease-in-out;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+  transition: all 0.2s;
 }
-.btn-outline-3d:hover {
+.btn-wa-neon:hover {
   background: #25d366;
   color: #000 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 0 #0d5c2a, 0 16px 30px rgba(37,211,102,0.5);
-}
-.btn-outline-3d:active {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 #0d5c2a;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.8);
 }
 
-/* 3D Hero Stage */
+/* 3D Hero Section */
 .hero {
-  position: relative;
-  min-height: 88vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  perspective: 1200px;
-  padding: 70px 0;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1511499767150-a48a237f0083');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  padding: 60px 0;
+  background: radial-gradient(circle at center, rgba(30, 25, 12, 0.6) 0%, rgba(2, 2, 3, 0.95) 80%);
 }
 .hero-content {
-  transform-style: preserve-3d;
-  animation: heroFloat 5s ease-in-out infinite alternate;
+  max-width: 700px;
 }
-@keyframes heroFloat {
-  0% { transform: translateY(0px) rotateX(0deg); }
-  100% { transform: translateY(-10px) rotateX(2.5deg); }
-}
-
-.hero-badge {
+.cyber-badge {
   display: inline-block;
-  padding: 8px 20px;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 30px;
+  padding: 6px 16px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid #ffd700;
+  border-radius: 4px;
   color: #ffd700;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
-  backdrop-filter: blur(8px);
-  animation: badgeGlow 3s infinite alternate ease-in-out;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  animation: neonPulse 2s infinite alternate;
 }
-@keyframes badgeGlow {
-  0% { border-color: rgba(212, 175, 55, 0.3); box-shadow: 0 0 10px rgba(212,175,55,0.2); }
-  100% { border-color: rgba(255, 215, 0, 0.9); box-shadow: 0 0 25px rgba(212,175,55,0.5); }
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 5px rgba(212,175,55,0.3); }
+  100% { box-shadow: 0 0 20px rgba(255,215,0,0.8); }
 }
 
 .hero-content h1 {
-  font-size: 56px;
+  font-size: 52px;
   line-height: 1.15;
   font-weight: 900;
-  text-shadow: 0 10px 40px rgba(0,0,0,0.95);
+  text-shadow: 0 0 25px rgba(0,0,0,0.9);
 }
-.hero-content span {
-  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #aa8010 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-content h1 span {
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 .hero-content p {
-  margin: 24px 0 36px;
-  font-size: 17px;
-  max-width: 620px;
-  color: #d6d6d6;
+  margin: 22px 0 35px;
+  font-size: 16px;
+  color: #b8b8b8;
   line-height: 1.6;
 }
 
-/* Sections */
+/* Holographic Section Cards */
 .section {
-  padding: 90px 0;
+  padding: 85px 0;
   position: relative;
 }
 .section-title {
   text-align: center;
-  font-size: 32px;
-  font-weight: 900;
+  font-size: 30px;
   color: #ffd700;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 5px 25px rgba(212, 175, 55, 0.5);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
 }
 
-/* 3D Animated Tilt Cards */
-.services-3d-grid, .products-3d-grid {
+.services-grid, .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  gap: 28px;
 }
 
-.tilt-card {
-  background: linear-gradient(145deg, rgba(28, 24, 15, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
+/* Holographic Laser Sweep Card */
+.holo-card {
+  background: linear-gradient(145deg, rgba(20, 18, 12, 0.9) 0%, rgba(8, 8, 10, 0.95) 100%);
   border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 20px;
-  padding: 35px 25px;
+  border-radius: 14px;
+  padding: 32px 22px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
   transform-style: preserve-3d;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.8);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.4s;
-  animation: cardFloat 6s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
 }
-.tilt-card:nth-child(even) {
-  animation-delay: 1.5s;
+.holo-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 215, 0, 0.15) 50%,
+    transparent 70%
+  );
+  transform: rotate(30deg);
+  animation: laserSweep 6s infinite linear;
+  pointer-events: none;
 }
-@keyframes cardFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
+@keyframes laserSweep {
+  0% { transform: translateY(-100%) rotate(30deg); }
+  100% { transform: translateY(100%) rotate(30deg); }
 }
 
-.tilt-card:hover {
+.holo-card:hover {
   border-color: #ffd700;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(212, 175, 55, 0.2);
 }
 .card-icon {
-  font-size: 50px;
-  margin-bottom: 15px;
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.7));
-  transform: translateZ(50px);
-  animation: bounceIcon 3s infinite ease-in-out;
+  font-size: 45px;
+  margin-bottom: 14px;
+  transform: translateZ(40px);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
 }
-@keyframes bounceIcon {
-  0%, 100% { transform: translateZ(50px) translateY(0); }
-  50% { transform: translateZ(60px) translateY(-5px) scale(1.08); }
-}
-
-.tilt-card h3 {
-  font-size: 20px;
+.holo-card h3 {
+  font-size: 18px;
   color: #ffd700;
   margin-bottom: 12px;
-  transform: translateZ(30px);
-}
-.tilt-card p {
-  font-size: 14px;
-  color: #b8b8b8;
-  line-height: 1.6;
-  margin-bottom: 22px;
   transform: translateZ(25px);
 }
+.holo-card p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  transform: translateZ(20px);
+}
 
-/* 3D Products Display */
-.product-tilt {
-  background: #0f0f0f;
-  border-radius: 20px;
+/* Product Cards */
+.product-holo {
+  background: #09090c;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(212, 175, 55, 0.25);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
   transform-style: preserve-3d;
-  transition: all 0.4s ease;
+  transition: all 0.3s;
 }
-.product-tilt:hover {
+.product-holo:hover {
   border-color: #ffd700;
-  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
 }
-.product-tilt img {
+.product-holo img {
   width: 100%;
-  height: 240px;
+  height: 230px;
   object-fit: cover;
-  transform: translateZ(20px);
-  transition: transform 0.5s ease;
+  transform: translateZ(15px);
+  transition: transform 0.4s;
 }
-.product-tilt:hover img {
-  transform: translateZ(30px) scale(1.08);
+.product-holo:hover img {
+  transform: translateZ(25px) scale(1.06);
 }
-.product-tilt h3 {
-  padding: 18px;
+.product-holo h3 {
+  padding: 16px;
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   color: #ffd700;
-  transform: translateZ(35px);
+  transform: translateZ(30px);
 }
 
-/* 3D Drive & Form Containers */
-.drive-box-3d {
-  background: linear-gradient(145deg, #181510 0%, #0a0a0a 100%);
-  padding: 20px;
-  border-radius: 20px;
+/* Drive & Frame Containers */
+.drive-box-holo {
+  background: linear-gradient(145deg, #12100a 0%, #060608 100%);
+  padding: 16px;
+  border-radius: 16px;
   border: 1px solid rgba(212, 175, 55, 0.4);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 35px rgba(0,0,0,0.9), 0 0 15px rgba(212, 175, 55, 0.25);
 }
 .drive-frame {
   width: 100%;
-  height: 520px;
+  height: 500px;
   border: 0;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #fff;
 }
 
-/* Contact Card */
-.contact-card-3d {
-  background: linear-gradient(145deg, #181510 0%, #080808 100%);
+/* Contact Module */
+.contact-holo {
+  background: linear-gradient(145deg, #15120c 0%, #050508 100%);
   border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 20px;
-  padding: 40px 25px;
+  border-radius: 16px;
+  padding: 35px 20px;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.85);
+  box-shadow: 0 0 30px rgba(0,0,0,0.9);
   max-width: 800px;
   margin: auto;
 }
-.contact-card-3d p {
-  font-size: 16px;
-  margin: 14px 0;
-  color: #ddd;
+.contact-holo p {
+  font-size: 15px;
+  margin: 12px 0;
+  color: #ccc;
 }
 
 /* Footer */
 footer {
-  background: #040404;
-  padding: 35px 15px;
+  background: #020203;
+  padding: 30px 15px;
   text-align: center;
   border-top: 1px solid rgba(212, 175, 55, 0.3);
+  position: relative;
+  z-index: 2;
 }
 footer h3 {
   color: #ffd700;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 6px;
 }
 
-/* Mobile Bottom Sticky Bar */
+/* Mobile Sticky Nav */
 .mobile-bottom-bar {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(10, 10, 10, 0.96);
+  background: rgba(5, 5, 7, 0.96);
   backdrop-filter: blur(12px);
-  border-top: 2px solid #d4af37;
+  border-top: 2px solid #ffd700;
   z-index: 10000;
   justify-content: space-around;
   padding: 8px 6px;
@@ -418,24 +392,25 @@ footer h3 {
   text-align: center;
   color: #fff;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   padding: 8px 4px;
-  border-radius: 6px;
-  margin: 0 4px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  margin: 0 3px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
 .mobile-bar-btn.call-btn { background: #007bff; }
 .mobile-bar-btn.wa-btn { background: #25d366; }
 .mobile-bar-btn.book-btn { background: #ffd700; color: #000; }
 
-/* Responsive Adjustments */
+/* Responsive Hamburger */
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 20px;
+  width: 26px;
+  height: 18px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -443,7 +418,7 @@ footer h3 {
 .menu-toggle span {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 2.5px;
   background-color: #ffd700;
   border-radius: 2px;
 }
@@ -457,25 +432,25 @@ footer h3 {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(6, 6, 6, 0.98);
-    border-bottom: 1px solid #d4af37;
-    padding: 25px 0;
-    gap: 18px;
+    background: rgba(4, 4, 6, 0.98);
+    border-bottom: 1px solid #ffd700;
+    padding: 22px 0;
+    gap: 16px;
   }
   nav ul.active { display: flex; }
-  .hero-content h1 { font-size: 34px; }
-  .section { padding: 60px 0; }
-  .section-title { font-size: 24px; }
+  .hero-content h1 { font-size: 32px; }
+  .section { padding: 50px 0; }
+  .section-title { font-size: 22px; }
   .mobile-bottom-bar { display: flex; }
-  .drive-frame { height: 400px; }
+  .drive-frame { height: 380px; }
 }
 </style>
 </head>
 <body>
 
-<canvas id="particles-canvas"></canvas>
-<div class="glow-sphere-1"></div>
-<div class="glow-sphere-2"></div>
+<div class="cursor-aura" id="cursorAura"></div>
+
+<div class="cyber-grid"></div>
 
 <header>
   <div class="container navbar">
@@ -492,7 +467,7 @@ footer h3 {
         <li><a href="#products" onclick="closeMenu()">Products</a></li>
         <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
         <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-        <li><a href="https://forms.gle/iogEx9uxJSqXksSg8" target="_blank" class="btn-3d" style="padding: 6px 14px; font-size: 13px;" onclick="closeMenu()">Book Eye Test</a></li>
+        <li><a href="https://forms.gle/iogEx9uxJSqXksSg8" target="_blank" class="btn-neon" style="padding: 6px 12px; font-size: 11px;" onclick="closeMenu()">Book Eye Test</a></li>
       </ul>
     </nav>
   </div>
@@ -500,89 +475,89 @@ footer h3 {
 
 <section class="hero">
   <div class="container hero-content">
-    <div class="hero-badge">✨ Optical Wholesaler & Premium Eyewear Hub</div>
+    <div class="cyber-badge">⚡ OPTICAL WHOLESALER & FANCY FRAMES HUB</div>
     <h1>SEE <span>BETTER</span><br>LOOK <span>BETTER</span></h1>
-    <p>Selling the latest designs and various types of sunglasses, fancy frames, blue cut lenses, and computerized eye testing.</p>
-    <a href="#appointment" class="btn-3d">Book Eye Test</a>
-    <a href="https://wa.me/919662504082" target="_blank" class="btn-outline-3d" style="margin-left: 10px;">WhatsApp Us</a>
+    <p>We are selling the latest designs and various types of sunglasses and fancy frames with computer-guided lens fitting and high precision eye examinations.</p>
+    <a href="#appointment" class="btn-neon">Book Eye Test</a>
+    <a href="https://wa.me/919662504082" target="_blank" class="btn-wa-neon" style="margin-left: 10px;">WhatsApp Us</a>
   </div>
 </section>
 
 <section class="section" id="services">
-  <h2 class="section-title">Our Animated 3D Services</h2>
-  <div class="container services-3d-grid">
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+  <h2 class="section-title">Futuristic 3D Services</h2>
+  <div class="container services-grid">
+    <div class="holo-card" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.3">
       <div>
         <div class="card-icon">👁️</div>
         <h3>Eye Testing</h3>
-        <p>Advanced computerized precision eye examination with accurate power analysis.</p>
+        <p>Advanced computerized precision eye examination with accurate digital analysis.</p>
       </div>
-      <a href="#appointment" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Book Eye Test</a>
+      <a href="#appointment" class="btn-neon" style="padding: 8px 14px; font-size: 11px;">Book Test</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+    <div class="holo-card" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.3">
       <div>
         <div class="card-icon">👓</div>
         <h3>Progressive Lenses</h3>
-        <p>Multicoated vision providing clarity across distance, intermediate, and reading zones.</p>
+        <p>Multicoated vision providing clarity across distance, intermediate, and near reading.</p>
       </div>
-      <a href="#appointment" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Book Consultation</a>
+      <a href="#appointment" class="btn-neon" style="padding: 8px 14px; font-size: 11px;">Consultation</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+    <div class="holo-card" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.3">
       <div>
         <div class="card-icon">🛡️</div>
         <h3>Blue Cut & UV Filter</h3>
-        <p>Anti-glare screen protection guarding against mobile, laptop, and digital screen strain.</p>
+        <p>Anti-glare screen protection guarding against mobile, laptop, and digital eye strain.</p>
       </div>
-      <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">View Lenses</a>
+      <a href="#products" class="btn-neon" style="padding: 8px 14px; font-size: 11px;">View Lenses</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+    <div class="holo-card" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.3">
       <div>
         <div class="card-icon">🕶️</div>
         <h3>Fancy Frames Wholesale</h3>
         <p>Extensive wholesale and retail collections of stylish, lightweight fancy frames.</p>
       </div>
-      <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Explore Designs</a>
+      <a href="#products" class="btn-neon" style="padding: 8px 14px; font-size: 11px;">Explore Frames</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+    <div class="holo-card" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.3">
       <div>
         <div class="card-icon">👁️‍🗨️</div>
         <h3>Contact Lenses</h3>
         <p>Daily disposable, monthly wear, and cosmetic colored high-moisture contact lenses.</p>
       </div>
-      <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">View Collection</a>
+      <a href="#products" class="btn-neon" style="padding: 8px 14px; font-size: 11px;">View Lenses</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+    <div class="holo-card" data-tilt data-tilt-max="14" data-tilt-glare data-tilt-max-glare="0.3">
       <div>
         <div class="card-icon">🔧</div>
         <h3>Frame Repair & Fitting</h3>
         <p>Instant precision alignment, nose-pad replacements, screw tightening, and servicing.</p>
       </div>
-      <a href="#contact" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Store Location</a>
+      <a href="#contact" class="btn-neon" style="padding: 8px 14px; font-size: 11px;">Store Info</a>
     </div>
   </div>
 </section>
 
 <section class="section" id="products">
-  <h2 class="section-title">Our 3D Collection</h2>
-  <div class="container products-3d-grid">
-    <div class="product-tilt" data-tilt data-tilt-max="10">
+  <h2 class="section-title">Holographic Collection</h2>
+  <div class="container products-grid">
+    <div class="product-holo" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1577803645773-f96470509666" alt="Spectacles">
       <h3>Fancy Frames & Spectacles</h3>
     </div>
-    <div class="product-tilt" data-tilt data-tilt-max="10">
+    <div class="product-holo" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083" alt="Sunglasses">
       <h3>Latest Design Sunglasses</h3>
     </div>
-    <div class="product-tilt" data-tilt data-tilt-max="10">
+    <div class="product-holo" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1589782182703-2aaa69037b5b" alt="Contact Lenses">
       <h3>Contact Lenses</h3>
     </div>
-    <div class="product-tilt" data-tilt data-tilt-max="10">
+    <div class="product-holo" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67" alt="Kids Frames">
       <h3>Kids Eyewear Series</h3>
     </div>
@@ -590,17 +565,17 @@ footer h3 {
 </section>
 
 <section class="section" id="gallery">
-  <h2 class="section-title">Live 3D Gallery & Catalogue</h2>
+  <h2 class="section-title">Live 3D Drive Showcase</h2>
   <div class="container">
-    <div class="drive-box-3d">
+    <div class="drive-box-holo">
       <iframe 
         class="drive-frame" 
         src="https://drive.google.com/embeddedfolderview?id=1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5#grid" 
         allow="autoplay">
       </iframe>
     </div>
-    <div style="text-align:center; margin-top: 30px;">
-      <a href="https://drive.google.com/drive/folders/1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5?usp=sharing" target="_blank" class="btn-3d">
+    <div style="text-align:center; margin-top: 25px;">
+      <a href="https://drive.google.com/drive/folders/1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5?usp=sharing" target="_blank" class="btn-neon">
         📁 Open Full Gallery in Google Drive
       </a>
     </div>
@@ -608,19 +583,19 @@ footer h3 {
 </section>
 
 <section class="section" id="appointment">
-  <h2 class="section-title">Book Eye Test</h2>
+  <h2 class="section-title">Book Eye Examination</h2>
   <div class="container">
-    <div class="drive-box-3d">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLyltFJeSRjJfuvuffiaA2Z_zoQkYbOD4rHvVHRpRMNgBEQg/viewform?usp=dialog" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:10px; background:#fff;">Loading...</iframe>
+    <div class="drive-box-holo">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLyltFJeSRjJfuvuffiaA2Z_zoQkYbOD4rHvVHRpRMNgBEQg/viewform?usp=dialog" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:8px; background:#fff;">Loading...</iframe>
     </div>
   </div>
 </section>
 
 <section class="section" id="contact">
-  <h2 class="section-title">Visit Our Store</h2>
+  <h2 class="section-title">Store Headquarters</h2>
   <div class="container">
-    <div class="contact-card-3d" data-tilt data-tilt-max="8">
-      <p style="font-size: 20px; font-weight: 800; color: #ffd700;">Om Sai Optical Surat</p>
+    <div class="contact-holo" data-tilt data-tilt-max="8">
+      <p style="font-size: 18px; font-family:'Orbitron', sans-serif; font-weight: 800; color: #ffd700;">Om Sai Optical Surat</p>
       <p>📍 22 shreenathji society 2 Nilgiri Godadhra Road, Surat, Gujarat 394210, India</p>
       <p>📞 Phone: <a href="tel:09662504082" style="color: #ffd700; text-decoration: none; font-weight: 700;">+91 96625 04082</a></p>
       <p>📧 Email: kachhadiyarbhavesh@gmail.com</p>
@@ -636,13 +611,13 @@ footer h3 {
 </footer>
 
 <div class="mobile-bottom-bar">
-  <a href="tel:09662504082" class="mobile-bar-btn call-btn">📞 Call Now</a>
+  <a href="tel:09662504082" class="mobile-bar-btn call-btn">📞 Call</a>
   <a href="https://wa.me/919662504082?text=Hello%20Om%20Sai%20Optical,%20I%20have%20an%20inquiry." target="_blank" class="mobile-bar-btn wa-btn">💬 WhatsApp</a>
   <a href="#appointment" class="mobile-bar-btn book-btn">📝 Book Test</a>
 </div>
 
 <script>
-  // Mobile Hamburger Menu
+  // Mobile Hamburger Toggle
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -654,79 +629,20 @@ footer h3 {
     navMenu.classList.remove('active');
   }
 
-  // Initialize VanillaTilt for 3D tilt effects
-  VanillaTilt.init(document.querySelectorAll(".tilt-card, .product-tilt, .contact-card-3d"), {
-    max: 14,
-    speed: 450,
+  // Interactive Cursor Aura
+  const cursorAura = document.getElementById('cursorAura');
+  document.addEventListener('mousemove', (e) => {
+    cursorAura.style.left = e.clientX + 'px';
+    cursorAura.style.top = e.clientY + 'px';
+  });
+
+  // Initialize VanillaTilt 3D Effect
+  VanillaTilt.init(document.querySelectorAll(".holo-card, .product-holo, .contact-holo"), {
+    max: 12,
+    speed: 400,
     glare: true,
     "max-glare": 0.25
   });
-
-  // Animated Background Particles
-  const canvas = document.getElementById('particles-canvas');
-  const ctx = canvas.getContext('2d');
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  const particlesArray = [];
-  const numberOfParticles = Math.min(window.innerWidth / 20, 65);
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 1;
-      this.speedX = (Math.random() - 0.5) * 0.6;
-      this.speedY = (Math.random() - 0.5) * 0.6;
-      this.color = 'rgba(212, 175, 55, ' + (Math.random() * 0.4 + 0.2) + ')';
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x > canvas.width) this.x = 0;
-      else if (this.x < 0) this.x = canvas.width;
-      if (this.y > canvas.height) this.y = 0;
-      else if (this.y < 0) this.y = canvas.height;
-    }
-    draw() {
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < numberOfParticles; i++) {
-    particlesArray.push(new Particle());
-  }
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < particlesArray.length; i++) {
-      particlesArray[i].update();
-      particlesArray[i].draw();
-      for (let j = i; j < particlesArray.length; j++) {
-        const dx = particlesArray[i].x - particlesArray[j].x;
-        const dy = particlesArray[i].y - particlesArray[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < 110) {
-          ctx.beginPath();
-          ctx.strokeStyle = 'rgba(212, 175, 55, ' + (0.15 - distance / 110 * 0.15) + ')';
-          ctx.lineWidth = 0.6;
-          ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-          ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(animateParticles);
-  }
-  animateParticles();
 </script>
 
 </body>
