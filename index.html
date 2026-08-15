@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Sai Optical Surat | 3D Eyewear Experience | Fancy Frames & Sunglasses</title>
+<title>Om Sai Optical Surat | 3D Interactive Eyewear Experience</title>
 <meta name="description" content="Om Sai Optical Surat - Optical Wholesaler & Retailer. Latest designs of fancy frames, sunglasses, computerized eye testing, and progressive lenses.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
 <style>
 html {
   scroll-behavior: smooth;
@@ -17,22 +19,52 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background: radial-gradient(circle at 50% 20%, #1a160d 0%, #080808 60%, #020202 100%);
+  background: #050505;
   color: #fff;
-  padding-bottom: 60px;
+  padding-bottom: 65px;
   overflow-x: hidden;
+  position: relative;
 }
+
+/* 3D Moving Ambient Canvas Background */
+.bg-glow-1, .bg-glow-2 {
+  position: fixed;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  pointer-events: none;
+  animation: floatGlow 12s infinite alternate ease-in-out;
+}
+.bg-glow-1 {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(0,0,0,0) 70%);
+  top: 10%;
+  left: -100px;
+}
+.bg-glow-2 {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.18) 0%, rgba(0,0,0,0) 70%);
+  bottom: 15%;
+  right: -100px;
+  animation-duration: 16s;
+}
+@keyframes floatGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(80px, 60px) scale(1.15); }
+  100% { transform: translate(-40px, 120px) scale(0.95); }
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* 3D Header & Navbar */
+/* 3D Glassmorphism Sticky Header */
 header {
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(15px);
-  padding: 18px 0;
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(16px);
+  padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -43,20 +75,22 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 .logo {
   font-size: 22px;
-  font-weight: 800;
-  background: linear-gradient(135deg, #fff 0%, #d4af37 50%, #aa8010 100%);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 0%, #d4af37 60%, #aa8010 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
-  text-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
   letter-spacing: 0.5px;
+  filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.4));
+  transition: transform 0.3s;
+}
+.logo:hover {
+  transform: scale(1.03);
 }
 
-/* Nav Menu */
 nav ul {
   display: flex;
   list-style: none;
@@ -67,230 +101,207 @@ nav ul li a {
   text-decoration: none;
   color: #e0e0e0;
   font-weight: 500;
-  font-size: 15px;
-  transition: all 0.3s ease;
+  font-size: 14.5px;
+  transition: all 0.3s;
 }
 nav ul li a:hover {
   color: #d4af37;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
 }
 
-/* 3D Button Styles */
+/* Tactile 3D Buttons */
 .btn-3d {
   display: inline-block;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #f3cf65 0%, #d4af37 50%, #997819 100%);
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #997819 100%);
   color: #000 !important;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 700;
   font-size: 14px;
-  box-shadow: 0 6px 0 #73570a, 0 12px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 0 #6e540b, 0 12px 25px rgba(0,0,0,0.6);
   transform: translateY(0);
   transition: all 0.15s ease-in-out;
   cursor: pointer;
-  border: none;
 }
 .btn-3d:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 #73570a, 0 16px 25px rgba(212,175,55,0.4);
+  box-shadow: 0 8px 0 #6e540b, 0 16px 30px rgba(212,175,55,0.4);
 }
 .btn-3d:active {
   transform: translateY(4px);
-  box-shadow: 0 2px 0 #73570a, 0 4px 10px rgba(0,0,0,0.6);
+  box-shadow: 0 2px 0 #6e540b, 0 4px 10px rgba(0,0,0,0.6);
 }
 
 .btn-outline-3d {
   display: inline-block;
   padding: 12px 24px;
-  background: rgba(37, 211, 102, 0.1);
+  background: rgba(37, 211, 102, 0.08);
   color: #25d366 !important;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 700;
   font-size: 14px;
   border: 1px solid #25d366;
-  box-shadow: 0 6px 0 #0f632d, 0 10px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 0 #0d5c2a, 0 10px 20px rgba(0,0,0,0.6);
   transition: all 0.15s ease-in-out;
 }
 .btn-outline-3d:hover {
   background: #25d366;
   color: #000 !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 #0f632d, 0 16px 25px rgba(37,211,102,0.4);
+  box-shadow: 0 8px 0 #0d5c2a, 0 16px 30px rgba(37,211,102,0.4);
 }
 .btn-outline-3d:active {
   transform: translateY(4px);
-  box-shadow: 0 2px 0 #0f632d;
+  box-shadow: 0 2px 0 #0d5c2a;
 }
 
-/* Mobile Hamburger Toggle */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-.menu-toggle span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #d4af37;
-  border-radius: 2px;
-}
-
-/* 3D Hero Section */
+/* 3D Hero Stage */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   perspective: 1200px;
-  padding: 60px 0;
-  background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)), url('https://images.unsplash.com/photo-1511499767150-a48a237f0083');
+  padding: 70px 0;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1511499767150-a48a237f0083');
   background-size: cover;
   background-position: center;
 }
 .hero-content {
-  position: relative;
-  z-index: 2;
   transform-style: preserve-3d;
+  animation: heroFloat 5s ease-in-out infinite alternate;
 }
+@keyframes heroFloat {
+  0% { transform: translateY(0px) rotateX(0deg); }
+  100% { transform: translateY(-8px) rotateX(2deg); }
+}
+
 .hero-badge {
   display: inline-block;
-  padding: 6px 14px;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 7px 18px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.45);
   border-radius: 30px;
-  color: #d4af37;
+  color: #ffd700;
   font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  font-weight: 700;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+  backdrop-filter: blur(8px);
 }
 .hero-content h1 {
-  font-size: 54px;
+  font-size: 56px;
   line-height: 1.15;
-  font-weight: 800;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.9);
+  font-weight: 900;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.95);
 }
 .hero-content span {
-  background: linear-gradient(135deg, #fff 0%, #d4af37 60%, #b8972e 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #aa8010 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .hero-content p {
-  margin: 22px 0 35px;
+  margin: 24px 0 36px;
   font-size: 17px;
   max-width: 620px;
-  color: #d0d0d0;
+  color: #d6d6d6;
   line-height: 1.6;
 }
 
-/* 3D Glassmorphism Cards & Sections */
+/* 3D Section Headers */
 .section {
   padding: 90px 0;
-  perspective: 1000px;
 }
 .section-title {
   text-align: center;
   font-size: 32px;
-  font-weight: 800;
-  color: #d4af37;
-  margin-bottom: 45px;
+  font-weight: 900;
+  color: #ffd700;
+  margin-bottom: 50px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  letter-spacing: 2px;
+  text-shadow: 0 5px 25px rgba(212, 175, 55, 0.5);
 }
 
+/* 3D Tilt Card Grid */
 .services-3d-grid, .products-3d-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 32px;
 }
 
-/* 3D Card Architecture */
-.card-3d {
-  background: linear-gradient(145deg, rgba(30, 26, 18, 0.7) 0%, rgba(12, 12, 12, 0.9) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 16px;
+.tilt-card {
+  background: linear-gradient(145deg, rgba(28, 24, 15, 0.8) 0%, rgba(10, 10, 10, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 18px;
   padding: 35px 25px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
-.card-3d:hover {
-  transform: translateY(-12px) rotateX(4deg) scale(1.02);
-  border-color: #d4af37;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+.tilt-card:hover {
+  border-color: #ffd700;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.35);
 }
-.card-icon-3d {
-  font-size: 42px;
+.tilt-inner {
+  transform: translateZ(40px);
+}
+.card-icon {
+  font-size: 48px;
   margin-bottom: 15px;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.7));
+  transform: translateZ(50px);
 }
-.card-3d:hover .card-icon-3d {
-  transform: scale(1.15) translateZ(20px);
-}
-.card-3d h3 {
+.tilt-card h3 {
   font-size: 20px;
-  color: #f3cf65;
+  color: #ffd700;
   margin-bottom: 12px;
+  transform: translateZ(30px);
 }
-.card-3d p {
+.tilt-card p {
   font-size: 14px;
-  color: #b5b5b5;
+  color: #b8b8b8;
   line-height: 1.6;
   margin-bottom: 22px;
+  transform: translateZ(25px);
 }
 
-/* 3D Product Cards */
-.product-card-3d {
-  background: #111;
-  border-radius: 16px;
+/* 3D Product Display */
+.product-tilt {
+  background: #0f0f0f;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
-  transition: all 0.4s ease;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
   transform-style: preserve-3d;
 }
-.product-card-3d:hover {
-  transform: translateY(-10px) scale(1.03);
-  border-color: #d4af37;
-  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
-}
-.product-card-3d img {
+.product-tilt img {
   width: 100%;
   height: 240px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transform: translateZ(20px);
 }
-.product-card-3d:hover img {
-  transform: scale(1.08);
-}
-.product-card-3d h3 {
+.product-tilt h3 {
   padding: 18px;
   text-align: center;
   font-size: 17px;
-  color: #e5c158;
+  color: #ffd700;
+  transform: translateZ(35px);
 }
 
-/* 3D Google Drive Box */
+/* 3D Drive & Form Containers */
 .drive-box-3d {
   background: linear-gradient(145deg, #181510 0%, #0a0a0a 100%);
-  padding: 18px;
+  padding: 20px;
   border-radius: 20px;
   border: 1px solid rgba(212, 175, 55, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 .drive-frame {
   width: 100%;
@@ -300,45 +311,45 @@ nav ul li a:hover {
   background: #fff;
 }
 
-/* Contact Box */
-.contact-3d-box {
-  background: linear-gradient(145deg, #14120e 0%, #080808 100%);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 18px;
-  padding: 35px;
+/* Contact Hub */
+.contact-card-3d {
+  background: linear-gradient(145deg, #181510 0%, #080808 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  padding: 40px 25px;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.85);
   max-width: 800px;
   margin: auto;
 }
-.contact-3d-box p {
+.contact-card-3d p {
   font-size: 16px;
-  margin: 12px 0;
-  color: #d5d5d5;
+  margin: 14px 0;
+  color: #ddd;
 }
 
 /* Footer */
 footer {
-  background: #050505;
+  background: #040404;
   padding: 35px 15px;
   text-align: center;
   border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
 footer h3 {
-  color: #d4af37;
+  color: #ffd700;
   font-size: 20px;
   margin-bottom: 6px;
 }
 
-/* Mobile Action Bar */
+/* Mobile Bottom Bar */
 .mobile-bottom-bar {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(12, 12, 12, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(12px);
   border-top: 2px solid #d4af37;
   z-index: 10000;
   justify-content: space-around;
@@ -358,9 +369,27 @@ footer h3 {
 }
 .mobile-bar-btn.call-btn { background: #007bff; }
 .mobile-bar-btn.wa-btn { background: #25d366; }
-.mobile-bar-btn.book-btn { background: #d4af37; color: #000; }
+.mobile-bar-btn.book-btn { background: #ffd700; color: #000; }
 
-/* Media Queries */
+/* Responsive Adjustments */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffd700;
+  border-radius: 2px;
+}
+
 @media(max-width: 768px) {
   .menu-toggle { display: flex; }
   nav ul {
@@ -370,7 +399,7 @@ footer h3 {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(8, 8, 8, 0.98);
+    background: rgba(6, 6, 6, 0.98);
     border-bottom: 1px solid #d4af37;
     padding: 25px 0;
     gap: 18px;
@@ -385,6 +414,9 @@ footer h3 {
 </style>
 </head>
 <body>
+
+<div class="bg-glow-1"></div>
+<div class="bg-glow-2"></div>
 
 <header>
   <div class="container navbar">
@@ -409,67 +441,67 @@ footer h3 {
 
 <section class="hero">
   <div class="container hero-content">
-    <div class="hero-badge">✨ Premium Eyewear & Wholesale Hub</div>
+    <div class="hero-badge">✨ Optical Wholesaler & Premium Eyewear Hub</div>
     <h1>SEE <span>BETTER</span><br>LOOK <span>BETTER</span></h1>
-    <p>We are selling the latest designs and various types of sunglasses and fancy frames with advanced lens technology and precise computerized eye testing.</p>
+    <p>We are selling the latest designs and various types of sunglasses, fancy frames, blue cut lenses, and advanced computerized eye testing.</p>
     <a href="#appointment" class="btn-3d">Book Eye Test</a>
     <a href="https://wa.me/919662504082" target="_blank" class="btn-outline-3d" style="margin-left: 10px;">WhatsApp Us</a>
   </div>
 </section>
 
 <section class="section" id="services">
-  <h2 class="section-title">Our Services</h2>
+  <h2 class="section-title">Our 3D Services</h2>
   <div class="container services-3d-grid">
-    <div class="card-3d">
-      <div>
-        <div class="card-icon-3d">👁️</div>
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
+      <div class="tilt-inner">
+        <div class="card-icon">👁️</div>
         <h3>Eye Testing</h3>
-        <p>Advanced computerized precision eye examination for zero-error vision measurement.</p>
+        <p>Advanced computerized precision eye examination with accurate power analysis.</p>
       </div>
       <a href="#appointment" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Book Eye Test</a>
     </div>
 
-    <div class="card-3d">
-      <div>
-        <div class="card-icon-3d">👓</div>
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
+      <div class="tilt-inner">
+        <div class="card-icon">👓</div>
         <h3>Progressive Lenses</h3>
-        <p>Seamless multicoated vision for distance, intermediate, and near-reading comfort.</p>
+        <p>Multicoated vision providing clarity across distance, intermediate, and reading zones.</p>
       </div>
       <a href="#appointment" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Book Consultation</a>
     </div>
 
-    <div class="card-3d">
-      <div>
-        <div class="card-icon-3d">🛡️</div>
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
+      <div class="tilt-inner">
+        <div class="card-icon">🛡️</div>
         <h3>Blue Cut & UV Filter</h3>
-        <p>Special anti-glare screen protection for daily computer, mobile, and laptop users.</p>
+        <p>Anti-glare screen protection guarding against mobile, laptop, and digital screen strain.</p>
       </div>
       <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">View Lenses</a>
     </div>
 
-    <div class="card-3d">
-      <div>
-        <div class="card-icon-3d">🕶️</div>
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
+      <div class="tilt-inner">
+        <div class="card-icon">🕶️</div>
         <h3>Fancy Frames Wholesale</h3>
-        <p>Extensive wholesale & retail collections of ultra-light fancy spectacle frames.</p>
+        <p>Extensive wholesale and retail collections of stylish, lightweight fancy frames.</p>
       </div>
       <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Explore Designs</a>
     </div>
 
-    <div class="card-3d">
-      <div>
-        <div class="card-icon-3d">👁️‍🗨️</div>
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
+      <div class="tilt-inner">
+        <div class="card-icon">👁️‍🗨️</div>
         <h3>Contact Lenses</h3>
         <p>Daily disposable, monthly wear, and cosmetic colored high-moisture contact lenses.</p>
       </div>
       <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">View Collection</a>
     </div>
 
-    <div class="card-3d">
-      <div>
-        <div class="card-icon-3d">🔧</div>
-        <h3>Frame Servicing & Repair</h3>
-        <p>Instant precision alignment, nose-pad changes, screw fixes, and fitting.</p>
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
+      <div class="tilt-inner">
+        <div class="card-icon">🔧</div>
+        <h3>Frame Repair & Fitting</h3>
+        <p>Instant precision alignment, nose-pad replacements, screw tightening, and servicing.</p>
       </div>
       <a href="#contact" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Store Location</a>
     </div>
@@ -477,21 +509,21 @@ footer h3 {
 </section>
 
 <section class="section" id="products">
-  <h2 class="section-title">Our 3D Collection</h2>
+  <h2 class="section-title">Our Collection</h2>
   <div class="container products-3d-grid">
-    <div class="product-card-3d">
+    <div class="product-tilt" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1577803645773-f96470509666" alt="Spectacles">
       <h3>Fancy Frames & Spectacles</h3>
     </div>
-    <div class="product-card-3d">
+    <div class="product-tilt" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083" alt="Sunglasses">
       <h3>Latest Design Sunglasses</h3>
     </div>
-    <div class="product-card-3d">
+    <div class="product-tilt" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1589782182703-2aaa69037b5b" alt="Contact Lenses">
       <h3>Contact Lenses</h3>
     </div>
-    <div class="product-card-3d">
+    <div class="product-tilt" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67" alt="Kids Frames">
       <h3>Kids Eyewear Series</h3>
     </div>
@@ -528,10 +560,10 @@ footer h3 {
 <section class="section" id="contact">
   <h2 class="section-title">Visit Our Store</h2>
   <div class="container">
-    <div class="contact-3d-box">
-      <p style="font-size: 18px; font-weight: 700; color: #d4af37;">Om Sai Optical Surat</p>
+    <div class="contact-card-3d" data-tilt data-tilt-max="8">
+      <p style="font-size: 20px; font-weight: 800; color: #ffd700;">Om Sai Optical Surat</p>
       <p>📍 22 shreenathji society 2 Nilgiri Godadhra Road, Surat, Gujarat 394210, India</p>
-      <p>📞 Phone: <a href="tel:09662504082" style="color: #d4af37; text-decoration: none; font-weight: 700;">+91 96625 04082</a></p>
+      <p>📞 Phone: <a href="tel:09662504082" style="color: #ffd700; text-decoration: none; font-weight: 700;">+91 96625 04082</a></p>
       <p>📧 Email: kachhadiyarbhavesh@gmail.com</p>
       <p>🏙️ Service Area: Nilgiri, Limbayat, Surat, Gujarat 395012, India</p>
     </div>
@@ -551,6 +583,7 @@ footer h3 {
 </div>
 
 <script>
+  // Mobile Hamburger Toggle
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -561,6 +594,14 @@ footer h3 {
   function closeMenu() {
     navMenu.classList.remove('active');
   }
+
+  // Initialize 3D VanillaTilt on Cards
+  VanillaTilt.init(document.querySelectorAll(".tilt-card, .product-tilt, .contact-card-3d"), {
+    max: 12,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.25
+  });
 </script>
 
 </body>
