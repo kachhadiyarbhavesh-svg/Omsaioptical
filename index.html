@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Sai Optical Surat | 3D SVG Animated Eyewear Experience</title>
-<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler. Latest designs of fancy frames, sunglasses, computerized eye testing, and progressive lenses.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Om Sai Optical Surat | Premium Fancy Frames & Sunglasses</title>
+<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler. Latest designs of sunglasses, fancy frames, computerized eye testing, and progressive lenses.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
 <style>
@@ -16,14 +16,39 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 body {
-  background: #030303;
+  background: #050505;
   color: #fff;
-  padding-bottom: 70px;
+  padding-bottom: 75px;
   overflow-x: hidden;
   position: relative;
+}
+
+h1, h2, h3, .logo-text, .section-title {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Ambient Radial Glows */
+.ambient-glow-1, .ambient-glow-2 {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+}
+.ambient-glow-1 {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(0,0,0,0) 70%);
+  top: 10%;
+  left: -10%;
+}
+.ambient-glow-2 {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.12) 0%, rgba(0,0,0,0) 70%);
+  bottom: 20%;
+  right: -10%;
 }
 
 .container {
@@ -34,15 +59,15 @@ body {
   z-index: 2;
 }
 
-/* Header & Logo */
+/* Frosted Glass Header */
 header {
-  background: rgba(8, 8, 8, 0.9);
-  backdrop-filter: blur(16px);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
   padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
   box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 .navbar {
@@ -50,7 +75,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.logo-container {
+.logo-box {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -59,76 +84,77 @@ header {
 .logo-text {
   font-size: 20px;
   font-weight: 800;
-  background: linear-gradient(135deg, #fff 0%, #ffd700 50%, #d4af37 100%);
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #d4af37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 0.5px;
 }
 
-/* Nav Menu */
 nav ul {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 24px;
   align-items: center;
 }
 nav ul li a {
   text-decoration: none;
-  color: #e0e0e0;
+  color: #d1d1d1;
   font-size: 14px;
   font-weight: 500;
   transition: all 0.3s;
 }
 nav ul li a:hover {
   color: #ffd700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
 }
 
-/* Buttons */
-.btn-gold {
+/* Stylish Buttons */
+.btn-prime {
   display: inline-block;
   padding: 12px 24px;
   background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
   color: #000 !important;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 700;
-  font-size: 13px;
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-  transition: all 0.2s;
+  font-size: 13.5px;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.25s ease;
   border: none;
+  cursor: pointer;
 }
-.btn-gold:hover {
+.btn-prime:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
 }
-.btn-wa {
+
+.btn-secondary {
   display: inline-block;
   padding: 12px 24px;
   background: rgba(37, 211, 102, 0.1);
   color: #25d366 !important;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 13.5px;
   border: 1px solid #25d366;
-  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+  transition: all 0.25s ease;
 }
-.btn-wa:hover {
+.btn-secondary:hover {
   background: #25d366;
   color: #000 !important;
   transform: translateY(-2px);
 }
 
-/* Hero Section with SVG Graphic */
+/* Hero Stage */
 .hero {
   min-height: 85vh;
   display: flex;
   align-items: center;
   position: relative;
   padding: 60px 0;
-  background: radial-gradient(circle at 70% 30%, rgba(45, 36, 12, 0.4) 0%, rgba(3, 3, 3, 0.95) 75%);
+  background: radial-gradient(circle at 65% 30%, rgba(40, 32, 10, 0.4) 0%, rgba(5, 5, 5, 0.95) 75%);
 }
 .hero-grid {
   display: grid;
@@ -139,17 +165,17 @@ nav ul li a:hover {
 .hero-badge {
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid #ffd700;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.4);
   border-radius: 20px;
   color: #ffd700;
   font-size: 12px;
   font-weight: 700;
   margin-bottom: 20px;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  letter-spacing: 0.5px;
 }
 .hero-content h1 {
-  font-size: 50px;
+  font-size: 54px;
   line-height: 1.15;
   font-weight: 900;
 }
@@ -157,31 +183,29 @@ nav ul li a:hover {
   color: #ffd700;
 }
 .hero-content p {
-  margin: 20px 0 30px;
+  margin: 20px 0 32px;
   font-size: 16px;
-  color: #c0c0c0;
+  color: #b5b5b5;
   line-height: 1.6;
 }
 
-/* Animated SVG Glasses in Hero */
-.hero-svg-box {
+/* Hero Animated Eyewear SVG */
+.hero-svg-wrapper {
   text-align: center;
-  perspective: 1000px;
 }
 .hero-svg {
   width: 100%;
   max-width: 440px;
-  filter: drop-shadow(0 15px 30px rgba(212, 175, 55, 0.3));
-  animation: floatGlasses 5s infinite alternate ease-in-out;
+  filter: drop-shadow(0 15px 35px rgba(212, 175, 55, 0.3));
+  animation: heroFloat 5s infinite alternate ease-in-out;
 }
-@keyframes floatGlasses {
+@keyframes heroFloat {
   0% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-12px) rotate(1.5deg); }
   100% { transform: translateY(6px) rotate(-1.5deg); }
 }
 
-/* Pulse Rays & Laser Scanning Animation */
-.laser-ray {
+.laser-beam {
   animation: scanLaser 3s infinite alternate ease-in-out;
 }
 @keyframes scanLaser {
@@ -189,14 +213,14 @@ nav ul li a:hover {
   100% { transform: translateX(30px); opacity: 0.9; }
 }
 
-/* Services Section */
+/* Section Header */
 .section {
-  padding: 80px 0;
+  padding: 85px 0;
   position: relative;
 }
 .section-title {
   text-align: center;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 800;
   color: #ffd700;
   margin-bottom: 45px;
@@ -204,18 +228,18 @@ nav ul li a:hover {
   letter-spacing: 1px;
 }
 
+/* Attractive 3D Cards */
 .services-grid, .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
 }
 
-/* 3D Animated Cards */
-.svg-card {
-  background: linear-gradient(145deg, rgba(22, 19, 12, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 16px;
-  padding: 30px 20px;
+.card-box {
+  background: linear-gradient(145deg, rgba(22, 18, 12, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 18px;
+  padding: 32px 22px;
   text-align: center;
   transform-style: preserve-3d;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
@@ -224,42 +248,42 @@ nav ul li a:hover {
   justify-content: space-between;
   transition: all 0.3s ease;
 }
-.svg-card:hover {
+.card-box:hover {
   border-color: #ffd700;
   box-shadow: 0 20px 45px rgba(212, 175, 55, 0.35);
   transform: translateY(-8px);
 }
 .service-icon-svg {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 15px;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 16px;
   display: block;
 }
-
-.svg-card h3 {
-  font-size: 18px;
+.card-box h3 {
+  font-size: 19px;
   color: #ffd700;
   margin-bottom: 10px;
 }
-.svg-card p {
+.card-box p {
   font-size: 13.5px;
   color: #aaa;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.55;
+  margin-bottom: 22px;
 }
 
-/* Products */
+/* Product Cards */
 .product-card {
   background: #0d0d0d;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.2);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
   transition: all 0.3s;
 }
 .product-card:hover {
   border-color: #ffd700;
   transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(212, 175, 55, 0.3);
 }
 .product-card img {
   width: 100%;
@@ -275,32 +299,32 @@ nav ul li a:hover {
 
 /* Google Drive Container */
 .drive-box {
-  background: #0d0d0d;
+  background: #0e0e0e;
   padding: 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
   box-shadow: 0 15px 40px rgba(0,0,0,0.9);
 }
 .drive-frame {
   width: 100%;
   height: 500px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #fff;
 }
 
-/* Contact Card */
-.contact-card {
+/* Contact Module */
+.contact-box {
   background: linear-gradient(145deg, #15120c 0%, #080808 100%);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 18px;
   padding: 35px 20px;
   text-align: center;
   box-shadow: 0 15px 40px rgba(0,0,0,0.85);
   max-width: 800px;
   margin: auto;
 }
-.contact-card p {
+.contact-box p {
   font-size: 15px;
   margin: 12px 0;
   color: #ccc;
@@ -311,7 +335,7 @@ footer {
   background: #020202;
   padding: 30px 15px;
   text-align: center;
-  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 footer h3 {
   color: #ffd700;
@@ -319,7 +343,7 @@ footer h3 {
   margin-bottom: 6px;
 }
 
-/* Mobile Sticky Bar */
+/* Mobile Bottom Sticky Bar */
 .mobile-bottom-bar {
   display: none;
   position: fixed;
@@ -341,14 +365,14 @@ footer h3 {
   font-size: 11px;
   font-weight: 700;
   padding: 8px 4px;
-  border-radius: 4px;
+  border-radius: 6px;
   margin: 0 3px;
 }
 .mobile-bar-btn.call-btn { background: #007bff; }
 .mobile-bar-btn.wa-btn { background: #25d366; }
 .mobile-bar-btn.book-btn { background: #ffd700; color: #000; }
 
-/* Responsive Hamburger */
+/* Responsive Adjustments */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -383,7 +407,7 @@ footer h3 {
     gap: 15px;
   }
   nav ul.active { display: flex; }
-  .hero-content h1 { font-size: 32px; }
+  .hero-content h1 { font-size: 34px; }
   .section { padding: 50px 0; }
   .section-title { font-size: 22px; }
   .mobile-bottom-bar { display: flex; }
@@ -393,9 +417,12 @@ footer h3 {
 </head>
 <body>
 
+<div class="ambient-glow-1"></div>
+<div class="ambient-glow-2"></div>
+
 <header>
   <div class="container navbar">
-    <a href="#" class="logo-container">
+    <a href="#" class="logo-box">
       <svg width="32" height="32" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="44" stroke="#ffd700" stroke-width="6" fill="none" stroke-dasharray="180" stroke-dashoffset="0">
           <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite"/>
@@ -418,7 +445,7 @@ footer h3 {
         <li><a href="#products" onclick="closeMenu()">Products</a></li>
         <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
         <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-        <li><a href="https://forms.gle/iogEx9uxJSqXksSg8" target="_blank" class="btn-gold" style="padding: 6px 14px; font-size: 11px;" onclick="closeMenu()">Book Eye Test</a></li>
+        <li><a href="https://forms.gle/iogEx9uxJSqXksSg8" target="_blank" class="btn-prime" style="padding: 6px 14px; font-size: 11px;" onclick="closeMenu()">Book Eye Test</a></li>
       </ul>
     </nav>
   </div>
@@ -429,12 +456,12 @@ footer h3 {
     <div class="hero-content">
       <div class="hero-badge">✨ OPTICAL WHOLESALER & FANCY FRAMES</div>
       <h1>SEE <span>BETTER</span><br>LOOK <span>BETTER</span></h1>
-      <p>We are selling latest design and various types of sunglasses, fancy frames, blue-cut computer lenses, and advanced computerized eye testing.</p>
-      <a href="#appointment" class="btn-gold">Book Eye Test</a>
-      <a href="https://wa.me/919662504082" target="_blank" class="btn-wa" style="margin-left: 10px;">WhatsApp Us</a>
+      <p>We are selling the latest designs and various types of sunglasses, fancy frames, blue-cut computer lenses, and advanced computerized eye testing.</p>
+      <a href="#appointment" class="btn-prime">Book Eye Test</a>
+      <a href="https://wa.me/919662504082" target="_blank" class="btn-secondary" style="margin-left: 10px;">WhatsApp Us</a>
     </div>
 
-    <div class="hero-svg-box">
+    <div class="hero-svg-wrapper">
       <svg class="hero-svg" viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -454,8 +481,8 @@ footer h3 {
         <path d="M50 85 L10 65" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round"/>
         <path d="M450 85 L490 65" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round"/>
 
-        <line x1="70" y1="80" x2="190" y2="160" stroke="#ffd700" stroke-width="3" stroke-linecap="round" class="laser-ray"/>
-        <line x1="310" y1="80" x2="430" y2="160" stroke="#ffd700" stroke-width="3" stroke-linecap="round" class="laser-ray"/>
+        <line x1="70" y1="80" x2="190" y2="160" stroke="#ffd700" stroke-width="3" stroke-linecap="round" class="laser-beam"/>
+        <line x1="310" y1="80" x2="430" y2="160" stroke="#ffd700" stroke-width="3" stroke-linecap="round" class="laser-beam"/>
 
         <circle cx="130" cy="120" r="45" stroke="rgba(255,215,0,0.4)" stroke-width="2" stroke-dasharray="8 6">
           <animateTransform attributeName="transform" type="rotate" from="0 130 120" to="360 130 120" dur="8s" repeatCount="indefinite"/>
@@ -469,10 +496,10 @@ footer h3 {
 </section>
 
 <section class="section" id="services">
-  <h2 class="section-title">Our Animated Services</h2>
+  <h2 class="section-title">Our Services</h2>
   <div class="container services-grid">
     
-    <div class="svg-card" data-tilt data-tilt-max="14">
+    <div class="card-box" data-tilt data-tilt-max="12">
       <div>
         <svg class="service-icon-svg" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" stroke="#ffd700" stroke-width="3" fill="none" stroke-dasharray="6 4">
@@ -484,12 +511,12 @@ footer h3 {
           </circle>
         </svg>
         <h3>Eye Testing</h3>
-        <p>Computerized precision eye examination with accurate digital diopter analysis.</p>
+        <p>Computerized precision eye examination with accurate digital analysis.</p>
       </div>
-      <a href="#appointment" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">Book Eye Test</a>
+      <a href="#appointment" class="btn-prime" style="padding: 8px 14px; font-size: 11px;">Book Eye Test</a>
     </div>
 
-    <div class="svg-card" data-tilt data-tilt-max="14">
+    <div class="card-box" data-tilt data-tilt-max="12">
       <div>
         <svg class="service-icon-svg" viewBox="0 0 100 100">
           <rect x="25" y="20" width="50" height="60" rx="15" stroke="#ffd700" stroke-width="3" fill="none"/>
@@ -503,10 +530,10 @@ footer h3 {
         <h3>Progressive Lenses</h3>
         <p>Smooth multifocal transition for distance, intermediate, and reading vision.</p>
       </div>
-      <a href="#appointment" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">Consultation</a>
+      <a href="#appointment" class="btn-prime" style="padding: 8px 14px; font-size: 11px;">Consultation</a>
     </div>
 
-    <div class="svg-card" data-tilt data-tilt-max="14">
+    <div class="card-box" data-tilt data-tilt-max="12">
       <div>
         <svg class="service-icon-svg" viewBox="0 0 100 100">
           <path d="M50 15 L80 30 V60 C80 75 50 88 50 88 C50 88 20 75 20 60 V30 Z" stroke="#ffd700" stroke-width="3" fill="rgba(212,175,55,0.1)"/>
@@ -517,10 +544,10 @@ footer h3 {
         <h3>Blue Cut & UV Shield</h3>
         <p>Anti-glare screen protection guarding against mobile, laptop, and digital strain.</p>
       </div>
-      <a href="#products" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">View Lenses</a>
+      <a href="#products" class="btn-prime" style="padding: 8px 14px; font-size: 11px;">View Lenses</a>
     </div>
 
-    <div class="svg-card" data-tilt data-tilt-max="14">
+    <div class="card-box" data-tilt data-tilt-max="12">
       <div>
         <svg class="service-icon-svg" viewBox="0 0 100 100">
           <circle cx="32" cy="50" r="18" stroke="#ffd700" stroke-width="3" fill="none"/>
@@ -531,10 +558,10 @@ footer h3 {
         <h3>Fancy Frames Wholesale</h3>
         <p>Extensive wholesale & retail collections of stylish, lightweight fancy frames.</p>
       </div>
-      <a href="#products" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">Explore Frames</a>
+      <a href="#products" class="btn-prime" style="padding: 8px 14px; font-size: 11px;">Explore Frames</a>
     </div>
 
-    <div class="svg-card" data-tilt data-tilt-max="14">
+    <div class="card-box" data-tilt data-tilt-max="12">
       <div>
         <svg class="service-icon-svg" viewBox="0 0 100 100">
           <ellipse cx="50" cy="50" rx="35" ry="25" stroke="#25d366" stroke-width="3" fill="rgba(37,211,102,0.1)"/>
@@ -546,10 +573,10 @@ footer h3 {
         <h3>Contact Lenses</h3>
         <p>Daily disposable, monthly wear, and cosmetic colored high-moisture contact lenses.</p>
       </div>
-      <a href="#products" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">View Lenses</a>
+      <a href="#products" class="btn-prime" style="padding: 8px 14px; font-size: 11px;">View Lenses</a>
     </div>
 
-    <div class="svg-card" data-tilt data-tilt-max="14">
+    <div class="card-box" data-tilt data-tilt-max="12">
       <div>
         <svg class="service-icon-svg" viewBox="0 0 100 100">
           <path d="M30 70 L65 35 M60 25 L75 40 M25 75 L35 75 L35 65 Z" stroke="#ffd700" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -560,7 +587,7 @@ footer h3 {
         <h3>Frame Servicing & Repair</h3>
         <p>Instant precision alignment, nose-pad changes, screw fixes, and fitting.</p>
       </div>
-      <a href="#contact" class="btn-gold" style="padding: 8px 14px; font-size: 11px;">Store Info</a>
+      <a href="#contact" class="btn-prime" style="padding: 8px 14px; font-size: 11px;">Store Info</a>
     </div>
 
   </div>
@@ -599,7 +626,7 @@ footer h3 {
       </iframe>
     </div>
     <div style="text-align:center; margin-top: 25px;">
-      <a href="https://drive.google.com/drive/folders/1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5?usp=sharing" target="_blank" class="btn-gold">
+      <a href="https://drive.google.com/drive/folders/1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5?usp=sharing" target="_blank" class="btn-prime">
         📁 Open Full Gallery in Google Drive
       </a>
     </div>
@@ -610,7 +637,7 @@ footer h3 {
   <h2 class="section-title">Book Eye Examination</h2>
   <div class="container">
     <div class="drive-box">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLyltFJeSRjJfuvuffiaA2Z_zoQkYbOD4rHvVHRpRMNgBEQg/viewform?usp=dialog" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:8px; background:#fff;">Loading...</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLyltFJeSRjJfuvuffiaA2Z_zoQkYbOD4rHvVHRpRMNgBEQg/viewform?usp=dialog" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:10px; background:#fff;">Loading...</iframe>
     </div>
   </div>
 </section>
@@ -618,8 +645,8 @@ footer h3 {
 <section class="section" id="contact">
   <h2 class="section-title">Visit Our Store</h2>
   <div class="container">
-    <div class="contact-card" data-tilt data-tilt-max="6">
-      <p style="font-size: 18px; font-weight: 800; color: #ffd700;">Om Sai Optical Surat</p>
+    <div class="contact-box" data-tilt data-tilt-max="6">
+      <p style="font-size: 20px; font-weight: 800; color: #ffd700;">Om Sai Optical Surat</p>
       <p>📍 22 shreenathji society 2 Nilgiri Godadhra Road, Surat, Gujarat 394210, India</p>
       <p>📞 Phone: <a href="tel:09662504082" style="color: #ffd700; text-decoration: none; font-weight: 700;">+91 96625 04082</a></p>
       <p>📧 Email: kachhadiyarbhavesh@gmail.com</p>
@@ -641,7 +668,6 @@ footer h3 {
 </div>
 
 <script>
-  // Mobile Hamburger Toggle
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -653,9 +679,8 @@ footer h3 {
     navMenu.classList.remove('active');
   }
 
-  // Initialize VanillaTilt 3D Effect
-  VanillaTilt.init(document.querySelectorAll(".svg-card, .product-card, .contact-card"), {
-    max: 12,
+  VanillaTilt.init(document.querySelectorAll(".card-box, .product-card, .contact-box"), {
+    max: 10,
     speed: 400,
     glare: true,
     "max-glare": 0.2
