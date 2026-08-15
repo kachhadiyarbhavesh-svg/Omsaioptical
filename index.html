@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Sai Optical Surat | Eye Testing | Spectacles | Contact Lenses</title>
-<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler & Retailer. Latest fancy frames, sunglasses, eye testing, and progressive lenses.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Om Sai Optical Surat | 3D Eyewear Experience | Fancy Frames & Sunglasses</title>
+<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler & Retailer. Latest designs of fancy frames, sunglasses, computerized eye testing, and progressive lenses.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 html {
   scroll-behavior: smooth;
@@ -17,9 +17,10 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background: #0b0b0b;
+  background: radial-gradient(circle at 50% 20%, #1a160d 0%, #080808 60%, #020202 100%);
   color: #fff;
   padding-bottom: 60px;
+  overflow-x: hidden;
 }
 .container {
   width: 90%;
@@ -27,14 +28,16 @@ body {
   margin: auto;
 }
 
-/* Header & Navigation */
+/* 3D Header & Navbar */
 header {
-  background: #000;
-  padding: 15px 0;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(15px);
+  padding: 18px 0;
   position: sticky;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid #d4af37;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 .navbar {
   display: flex;
@@ -43,43 +46,85 @@ header {
   position: relative;
 }
 .logo {
-  font-size: 20px;
-  font-weight: 700;
-  color: #d4af37;
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #d4af37 50%, #aa8010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
+  text-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  letter-spacing: 0.5px;
 }
 
-/* Desktop Menu */
+/* Nav Menu */
 nav ul {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 22px;
   align-items: center;
 }
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #e0e0e0;
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 15px;
+  transition: all 0.3s ease;
 }
 nav ul li a:hover {
   color: #d4af37;
-}
-.nav-btn {
-  background-color: #d4af37;
-  color: #000 !important;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.nav-btn:hover {
-  background-color: #b8972e;
-  color: #fff !important;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
 }
 
-/* Mobile Hamburger Button */
+/* 3D Button Styles */
+.btn-3d {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #f3cf65 0%, #d4af37 50%, #997819 100%);
+  color: #000 !important;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 6px 0 #73570a, 0 12px 20px rgba(0,0,0,0.5);
+  transform: translateY(0);
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+.btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #73570a, 0 16px 25px rgba(212,175,55,0.4);
+}
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #73570a, 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.btn-outline-3d {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgba(37, 211, 102, 0.1);
+  color: #25d366 !important;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid #25d366;
+  box-shadow: 0 6px 0 #0f632d, 0 10px 20px rgba(0,0,0,0.5);
+  transition: all 0.15s ease-in-out;
+}
+.btn-outline-3d:hover {
+  background: #25d366;
+  color: #000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #0f632d, 0 16px 25px rgba(37,211,102,0.4);
+}
+.btn-outline-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #0f632d;
+}
+
+/* Mobile Hamburger Toggle */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -89,7 +134,6 @@ nav ul li a:hover {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
 }
 .menu-toggle span {
   display: block;
@@ -97,197 +141,208 @@ nav ul li a:hover {
   height: 3px;
   background-color: #d4af37;
   border-radius: 2px;
-  transition: 0.3s;
 }
 
-/* Hero Section */
+/* 3D Hero Section */
 .hero {
-  background: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)), url('https://images.unsplash.com/photo-1511499767150-a48a237f0083');
-  background-size: cover;
-  background-position: center;
-  height: 85vh;
+  position: relative;
+  min-height: 85vh;
   display: flex;
   align-items: center;
+  perspective: 1200px;
+  padding: 60px 0;
+  background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)), url('https://images.unsplash.com/photo-1511499767150-a48a237f0083');
+  background-size: cover;
+  background-position: center;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+}
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 30px;
+  color: #d4af37;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 }
 .hero-content h1 {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: 54px;
+  line-height: 1.15;
+  font-weight: 800;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.9);
 }
 .hero-content span {
-  color: #d4af37;
+  background: linear-gradient(135deg, #fff 0%, #d4af37 60%, #b8972e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-content p {
-  margin: 20px 0;
-  font-size: 16px;
-  max-width: 600px;
-  color: #e0e0e0;
-}
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  background: #d4af37;
-  color: #000;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 600;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: #b8972e;
-  color: #fff;
-}
-.btn-outline {
-  background: transparent;
-  color: #25d366;
-  border: 2px solid #25d366;
-}
-.btn-outline:hover {
-  background: #25d366;
-  color: #fff;
+  margin: 22px 0 35px;
+  font-size: 17px;
+  max-width: 620px;
+  color: #d0d0d0;
+  line-height: 1.6;
 }
 
-/* General Sections */
+/* 3D Glassmorphism Cards & Sections */
 .section {
-  padding: 70px 0;
+  padding: 90px 0;
+  perspective: 1000px;
 }
 .section-title {
   text-align: center;
-  font-size: 26px;
+  font-size: 32px;
+  font-weight: 800;
   color: #d4af37;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* Services Grid */
-.services {
+.services-3d-grid, .products-3d-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
-.card {
-  background: #111;
-  padding: 25px 20px;
-  border: 1px solid #d4af37;
-  border-radius: 10px;
+
+/* 3D Card Architecture */
+.card-3d {
+  background: linear-gradient(145deg, rgba(30, 26, 18, 0.7) 0%, rgba(12, 12, 12, 0.9) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 16px;
+  padding: 35px 25px;
   text-align: center;
-  transition: 0.3s;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(212,175,55,0.2);
+.card-3d:hover {
+  transform: translateY(-12px) rotateX(4deg) scale(1.02);
+  border-color: #d4af37;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
-.card h3 {
-  margin: 12px 0 8px;
-  color: #d4af37;
-  font-size: 18px;
-}
-.card p {
-  font-size: 14px;
-  color: #ccc;
-  line-height: 1.5;
+.card-icon-3d {
+  font-size: 42px;
   margin-bottom: 15px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+  transition: transform 0.3s ease;
 }
-.service-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background: #d4af37;
-  color: #000;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 13px;
-  font-weight: 600;
-  transition: 0.3s;
+.card-3d:hover .card-icon-3d {
+  transform: scale(1.15) translateZ(20px);
 }
-.service-btn:hover {
-  background: #fff;
-  color: #000;
+.card-3d h3 {
+  font-size: 20px;
+  color: #f3cf65;
+  margin-bottom: 12px;
+}
+.card-3d p {
+  font-size: 14px;
+  color: #b5b5b5;
+  line-height: 1.6;
+  margin-bottom: 22px;
 }
 
-/* Products Grid */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-.product {
+/* 3D Product Cards */
+.product-card-3d {
   background: #111;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #333;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
 }
-.product img {
+.product-card-3d:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #d4af37;
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
+}
+.product-card-3d img {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
-.product h3 {
-  padding: 12px;
+.product-card-3d:hover img {
+  transform: scale(1.08);
+}
+.product-card-3d h3 {
+  padding: 18px;
   text-align: center;
-  font-size: 16px;
+  font-size: 17px;
+  color: #e5c158;
 }
 
-/* Live Google Drive Embed Frame */
-.drive-box {
-  background: #111;
-  padding: 15px;
-  border-radius: 12px;
-  border: 1px solid #d4af37;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+/* 3D Google Drive Box */
+.drive-box-3d {
+  background: linear-gradient(145deg, #181510 0%, #0a0a0a 100%);
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 .drive-frame {
   width: 100%;
   height: 520px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 12px;
   background: #fff;
 }
 
-/* Contact & Footer */
-.contact {
+/* Contact Box */
+.contact-3d-box {
+  background: linear-gradient(145deg, #14120e 0%, #080808 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 18px;
+  padding: 35px;
   text-align: center;
-  line-height: 2;
-  font-size: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+  max-width: 800px;
+  margin: auto;
 }
-.contact p {
-  margin: 6px 0;
+.contact-3d-box p {
+  font-size: 16px;
+  margin: 12px 0;
+  color: #d5d5d5;
 }
-.map iframe {
-  width: 100%;
-  height: 380px;
-  border: 0;
-}
+
+/* Footer */
 footer {
-  background: #000;
-  padding: 30px 15px;
+  background: #050505;
+  padding: 35px 15px;
   text-align: center;
-  border-top: 1px solid #d4af37;
-  font-size: 14px;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
 footer h3 {
   color: #d4af37;
+  font-size: 20px;
   margin-bottom: 6px;
 }
 
-/* Sticky Mobile Bottom Bar */
+/* Mobile Action Bar */
 .mobile-bottom-bar {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #111;
+  background: rgba(12, 12, 12, 0.95);
+  backdrop-filter: blur(10px);
   border-top: 2px solid #d4af37;
   z-index: 10000;
-  display: flex;
   justify-content: space-around;
-  align-items: center;
-  padding: 8px 5px;
+  padding: 8px 6px;
 }
 .mobile-bar-btn {
   flex: 1;
@@ -295,40 +350,19 @@ footer h3 {
   color: #fff;
   text-decoration: none;
   font-size: 12px;
-  font-weight: 600;
-  padding: 6px 4px;
-  border-radius: 4px;
+  font-weight: 700;
+  padding: 8px 4px;
+  border-radius: 6px;
   margin: 0 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
-.mobile-bar-btn.call-btn {
-  background: #007bff;
-}
-.mobile-bar-btn.wa-btn {
-  background: #25d366;
-}
-.mobile-bar-btn.book-btn {
-  background: #d4af37;
-  color: #000;
-}
+.mobile-bar-btn.call-btn { background: #007bff; }
+.mobile-bar-btn.wa-btn { background: #25d366; }
+.mobile-bar-btn.book-btn { background: #d4af37; color: #000; }
 
-/* Responsive Media Queries */
-@media(min-width: 769px) {
-  body {
-    padding-bottom: 0;
-  }
-  .mobile-bottom-bar {
-    display: none !important;
-  }
-}
-
+/* Media Queries */
 @media(max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
+  .menu-toggle { display: flex; }
   nav ul {
     display: none;
     flex-direction: column;
@@ -336,32 +370,17 @@ footer h3 {
     top: 100%;
     left: 0;
     width: 100%;
-    background: #000;
+    background: rgba(8, 8, 8, 0.98);
     border-bottom: 1px solid #d4af37;
-    padding: 20px 0;
-    gap: 15px;
+    padding: 25px 0;
+    gap: 18px;
   }
-  nav ul.active {
-    display: flex;
-  }
-  .hero-content h1 {
-    font-size: 32px;
-  }
-  .hero-content p {
-    font-size: 14px;
-  }
-  .logo {
-    font-size: 18px;
-  }
-  .section {
-    padding: 50px 0;
-  }
-  .section-title {
-    font-size: 22px;
-  }
-  .drive-frame {
-    height: 400px;
-  }
+  nav ul.active { display: flex; }
+  .hero-content h1 { font-size: 34px; }
+  .section { padding: 60px 0; }
+  .section-title { font-size: 24px; }
+  .mobile-bottom-bar { display: flex; }
+  .drive-frame { height: 400px; }
 }
 </style>
 </head>
@@ -382,7 +401,7 @@ footer h3 {
         <li><a href="#products" onclick="closeMenu()">Products</a></li>
         <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
         <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-        <li><a href="https://forms.gle/iogEx9uxJSqXksSg8" target="_blank" class="nav-btn" onclick="closeMenu()">Book Eye Test</a></li>
+        <li><a href="https://forms.gle/iogEx9uxJSqXksSg8" target="_blank" class="btn-3d" style="padding: 6px 14px; font-size: 13px;" onclick="closeMenu()">Book Eye Test</a></li>
       </ul>
     </nav>
   </div>
@@ -390,98 +409,107 @@ footer h3 {
 
 <section class="hero">
   <div class="container hero-content">
+    <div class="hero-badge">✨ Premium Eyewear & Wholesale Hub</div>
     <h1>SEE <span>BETTER</span><br>LOOK <span>BETTER</span></h1>
-    <p>Experience crystal-clear vision with premium eyewear, wholesale frame collections, and advanced lens technology[cite: 1].</p>
-    <a href="#appointment" class="btn">Book Eye Test</a>
-    <a href="https://wa.me/919662504082" target="_blank" class="btn btn-outline">WhatsApp Us</a>
+    <p>We are selling the latest designs and various types of sunglasses and fancy frames with advanced lens technology and precise computerized eye testing.</p>
+    <a href="#appointment" class="btn-3d">Book Eye Test</a>
+    <a href="https://wa.me/919662504082" target="_blank" class="btn-outline-3d" style="margin-left: 10px;">WhatsApp Us</a>
   </div>
 </section>
 
 <section class="section" id="services">
   <h2 class="section-title">Our Services</h2>
-  <div class="container services">
-    <div class="card">
+  <div class="container services-3d-grid">
+    <div class="card-3d">
       <div>
-        <h3>👁️ Eye Testing</h3>
-        <p>Advanced computerized eye examination with high accuracy.</p>
+        <div class="card-icon-3d">👁️</div>
+        <h3>Eye Testing</h3>
+        <p>Advanced computerized precision eye examination for zero-error vision measurement.</p>
       </div>
-      <a href="#appointment" class="service-btn">Book Eye Test</a>
+      <a href="#appointment" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Book Eye Test</a>
     </div>
-    <div class="card">
+
+    <div class="card-3d">
       <div>
-        <h3>👓 Progressive Lenses</h3>
-        <p>Seamless clear vision for distance, intermediate, and near reading.</p>
+        <div class="card-icon-3d">👓</div>
+        <h3>Progressive Lenses</h3>
+        <p>Seamless multicoated vision for distance, intermediate, and near-reading comfort.</p>
       </div>
-      <a href="#appointment" class="service-btn">Book Consultation</a>
+      <a href="#appointment" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Book Consultation</a>
     </div>
-    <div class="card">
+
+    <div class="card-3d">
       <div>
-        <h3>🛡️ Blue Cut & UV Protection</h3>
-        <p>Shield your eyes from digital screens, laptops, and harmful UV rays.</p>
+        <div class="card-icon-3d">🛡️</div>
+        <h3>Blue Cut & UV Filter</h3>
+        <p>Special anti-glare screen protection for daily computer, mobile, and laptop users.</p>
       </div>
-      <a href="#products" class="service-btn">View Glasses</a>
+      <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">View Lenses</a>
     </div>
-    <div class="card">
+
+    <div class="card-3d">
       <div>
-        <h3>🕶️ Premium Fancy Frames</h3>
-        <p>Trendy, lightweight, and wholesale optical frame collections[cite: 1].</p>
+        <div class="card-icon-3d">🕶️</div>
+        <h3>Fancy Frames Wholesale</h3>
+        <p>Extensive wholesale & retail collections of ultra-light fancy spectacle frames.</p>
       </div>
-      <a href="#products" class="service-btn">View Collection</a>
+      <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Explore Designs</a>
     </div>
-    <div class="card">
+
+    <div class="card-3d">
       <div>
-        <h3>👁️‍🗨️ Contact Lenses</h3>
-        <p>Daily, monthly, and powered colored contact lenses available.</p>
+        <div class="card-icon-3d">👁️‍🗨️</div>
+        <h3>Contact Lenses</h3>
+        <p>Daily disposable, monthly wear, and cosmetic colored high-moisture contact lenses.</p>
       </div>
-      <a href="#products" class="service-btn">View Lenses</a>
+      <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">View Collection</a>
     </div>
-    <div class="card">
+
+    <div class="card-3d">
       <div>
-        <h3>🔧 Frame Repair & Fitting</h3>
-        <p>Instant screw fixing, alignment, nose-pad changes, and servicing.</p>
+        <div class="card-icon-3d">🔧</div>
+        <h3>Frame Servicing & Repair</h3>
+        <p>Instant precision alignment, nose-pad changes, screw fixes, and fitting.</p>
       </div>
-      <a href="#contact" class="service-btn">Visit Store</a>
+      <a href="#contact" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Store Location</a>
     </div>
   </div>
 </section>
 
 <section class="section" id="products">
-  <h2 class="section-title">Our Collection</h2>
-  <div class="container products">
-    <div class="product">
+  <h2 class="section-title">Our 3D Collection</h2>
+  <div class="container products-3d-grid">
+    <div class="product-card-3d">
       <img src="https://images.unsplash.com/photo-1577803645773-f96470509666" alt="Spectacles">
-      <h3>Spectacles & Fancy Frames</h3>
+      <h3>Fancy Frames & Spectacles</h3>
     </div>
-    <div class="product">
+    <div class="product-card-3d">
       <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083" alt="Sunglasses">
-      <h3>Designer Sunglasses</h3>
+      <h3>Latest Design Sunglasses</h3>
     </div>
-    <div class="product">
+    <div class="product-card-3d">
       <img src="https://images.unsplash.com/photo-1589782182703-2aaa69037b5b" alt="Contact Lenses">
       <h3>Contact Lenses</h3>
     </div>
-    <div class="product">
+    <div class="product-card-3d">
       <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67" alt="Kids Frames">
-      <h3>Kids Frames</h3>
+      <h3>Kids Eyewear Series</h3>
     </div>
   </div>
 </section>
 
 <section class="section" id="gallery">
-  <h2 class="section-title">Live Store Gallery & Catalogues</h2>
+  <h2 class="section-title">Live 3D Gallery & Catalogue</h2>
   <div class="container">
-    <p style="text-align:center; color:#ccc; margin-bottom: 20px; font-size: 14px;">
-      Browse our live collection of latest frames, store tour videos, and PDF catalogues directly updated from Google Drive[cite: 1].
-    </p>
-    <div class="drive-box">
+    <div class="drive-box-3d">
       <iframe 
         class="drive-frame" 
         src="https://drive.google.com/embeddedfolderview?id=1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5#grid" 
         allow="autoplay">
       </iframe>
     </div>
-    <div style="text-align:center; margin-top:25px;">
-      <a href="https://drive.google.com/drive/folders/1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5?usp=sharing" target="_blank" class="btn">
+    <div style="text-align:center; margin-top: 30px;">
+      <a href="https://drive.google.com/drive/folders/1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5?usp=sharing" target="_blank" class="btn-3d">
         📁 Open Full Gallery in Google Drive
       </a>
     </div>
@@ -491,36 +519,35 @@ footer h3 {
 <section class="section" id="appointment">
   <h2 class="section-title">Book Eye Test</h2>
   <div class="container">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLyltFJeSRjJfuvuffiaA2Z_zoQkYbOD4rHvVHRpRMNgBEQg/viewform?usp=dialog" width="100%" height="850" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    <div class="drive-box-3d">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLyltFJeSRjJfuvuffiaA2Z_zoQkYbOD4rHvVHRpRMNgBEQg/viewform?usp=dialog" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:10px; background:#fff;">Loading...</iframe>
+    </div>
   </div>
 </section>
 
 <section class="section" id="contact">
-  <h2 class="section-title">Contact Us</h2>
-  <div class="container contact">
-    <p>📍 Shop No. 22, Shreenathji Society 2, Nilgiri Godadhra Road, Surat, Gujarat 394210, India </p>
-    <p>📞 <a href="tel:09662504082" style="color:#d4af37; text-decoration:none;">+91 96625 04082</a> </p>
-    <p>📧 kachhadiyarbhavesh@gmail.com</p>
-    <p>🏙️ Service Area: Nilgiri, Limbayat, Surat, Gujarat 394210, India </p>
+  <h2 class="section-title">Visit Our Store</h2>
+  <div class="container">
+    <div class="contact-3d-box">
+      <p style="font-size: 18px; font-weight: 700; color: #d4af37;">Om Sai Optical Surat</p>
+      <p>📍 22 shreenathji society 2 Nilgiri Godadhra Road, Surat, Gujarat 394210, India</p>
+      <p>📞 Phone: <a href="tel:09662504082" style="color: #d4af37; text-decoration: none; font-weight: 700;">+91 96625 04082</a></p>
+      <p>📧 Email: kachhadiyarbhavesh@gmail.com</p>
+      <p>🏙️ Service Area: Nilgiri, Limbayat, Surat, Gujarat 395012, India</p>
+    </div>
   </div>
 </section>
 
 <footer>
   <h3>OM SAI OPTICAL</h3>
-  <p>Optical Wholesaler & Retail Eyewear Store [cite: 1]</p>
+  <p>Optical Wholesaler & Retail Eyewear Store</p>
   <p>© 2026 All Rights Reserved</p>
 </footer>
 
 <div class="mobile-bottom-bar">
-  <a href="tel:09662504082" class="mobile-bar-btn call-btn">
-    📞 Call Now
-  </a>
-  <a href="https://wa.me/919662504082?text=Hello%20Om%20Sai%20Optical,%20I%20have%20an%20inquiry." target="_blank" class="mobile-bar-btn wa-btn">
-    💬 WhatsApp
-  </a>
-  <a href="#appointment" class="mobile-bar-btn book-btn">
-    📝 Book Test
-  </a>
+  <a href="tel:09662504082" class="mobile-bar-btn call-btn">📞 Call Now</a>
+  <a href="https://wa.me/919662504082?text=Hello%20Om%20Sai%20Optical,%20I%20have%20an%20inquiry." target="_blank" class="mobile-bar-btn wa-btn">💬 WhatsApp</a>
+  <a href="#appointment" class="mobile-bar-btn book-btn">📝 Book Test</a>
 </div>
 
 <script>
