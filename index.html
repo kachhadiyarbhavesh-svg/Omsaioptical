@@ -19,7 +19,7 @@ html {
 body {
   background: #0b0b0b;
   color: #fff;
-  padding-bottom: 60px; /* Space for sticky mobile bar */
+  padding-bottom: 60px;
 }
 .container {
   width: 90%;
@@ -232,24 +232,20 @@ nav ul li a:hover {
   font-size: 16px;
 }
 
-/* Gallery & Videos */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+/* Live Google Drive Embed Frame */
+.drive-box {
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #d4af37;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
-.gallery img {
+.drive-frame {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.video-frame {
-  width: 100%;
-  height: 320px;
+  height: 520px;
   border: 0;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #fff;
 }
 
 /* Contact & Footer */
@@ -319,7 +315,7 @@ footer h3 {
   color: #000;
 }
 
-/* Responsive Media Queries (Mobile & Tablet) */
+/* Responsive Media Queries */
 @media(min-width: 769px) {
   body {
     padding-bottom: 0;
@@ -363,8 +359,8 @@ footer h3 {
   .section-title {
     font-size: 22px;
   }
-  .video-frame {
-    height: 220px;
+  .drive-frame {
+    height: 400px;
   }
 }
 </style>
@@ -395,7 +391,7 @@ footer h3 {
 <section class="hero">
   <div class="container hero-content">
     <h1>SEE <span>BETTER</span><br>LOOK <span>BETTER</span></h1>
-    <p>Experience crystal-clear vision with premium eyewear, wholesale frame collections, and advanced lens technology.</p>
+    <p>Experience crystal-clear vision with premium eyewear, wholesale frame collections, and advanced lens technology[cite: 1].</p>
     <a href="#appointment" class="btn">Book Eye Test</a>
     <a href="https://wa.me/919662504082" target="_blank" class="btn btn-outline">WhatsApp Us</a>
   </div>
@@ -428,7 +424,7 @@ footer h3 {
     <div class="card">
       <div>
         <h3>🕶️ Premium Fancy Frames</h3>
-        <p>Trendy, lightweight, and wholesale optical frame collections.</p>
+        <p>Trendy, lightweight, and wholesale optical frame collections[cite: 1].</p>
       </div>
       <a href="#products" class="service-btn">View Collection</a>
     </div>
@@ -472,22 +468,24 @@ footer h3 {
 </section>
 
 <section class="section" id="gallery">
-  <h2 class="section-title">Gallery & Catalogue</h2>
-  <div class="container gallery">
-    <img src="gallery1.jpg" alt="Store Gallery 1">
-    <img src="gallery2.jpg" alt="Store Gallery 2">
-    <img src="gallery3.jpg" alt="Store Gallery 3">
+  <h2 class="section-title">Live Store Gallery & Catalogues</h2>
+  <div class="container">
+    <p style="text-align:center; color:#ccc; margin-bottom: 20px; font-size: 14px;">
+      Browse our live collection of latest frames, store tour videos, and PDF catalogues directly updated from Google Drive[cite: 1].
+    </p>
+    <div class="drive-box">
+      <iframe 
+        class="drive-frame" 
+        src="https://drive.google.com/embeddedfolderview?id=1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5#grid" 
+        allow="autoplay">
+      </iframe>
+    </div>
+    <div style="text-align:center; margin-top:25px;">
+      <a href="https://drive.google.com/drive/folders/1MnQo1CwULdvfqvx4C9bzGLokbquVPKN5?usp=sharing" target="_blank" class="btn">
+        📁 Open Full Gallery in Google Drive
+      </a>
+    </div>
   </div>
-  <br><br>
-  <div style="text-align:center">
-    <a href="https://drive.google.com/file/d/1d2knTeoeNzhs8ORdI6NOSiJ8noqz4kKl/view?usp=sharing" target="_blank" class="btn">
-      📄 View Optical Frame Catalogue PDF
-    </a>
-  </div>
-  <br><br>
-  <h2 class="section-title">Store Videos</h2>
-  <iframe class="video-frame" src="https://drive.google.com/file/d/1xNoDGENFcR6ECZv_dLXB_DerRVmXxlGj/preview" allow="autoplay" allowfullscreen></iframe>
-  <iframe class="video-frame" src="https://drive.google.com/file/d/1xNoDGENFcR6ECZv_dLXB_DerRVmXxlGj/preview" allow="autoplay" allowfullscreen></iframe>
 </section>
 
 <section class="section" id="appointment">
@@ -500,16 +498,16 @@ footer h3 {
 <section class="section" id="contact">
   <h2 class="section-title">Contact Us</h2>
   <div class="container contact">
-    <p>📍 Shop No. 22, Shreenathji Society 2, Nilgiri Godadara Road, Surat, Gujarat 394210</p>
-    <p>📞 <a href="tel:09662504082" style="color:#d4af37; text-decoration:none;">+91 96625 04082</a></p>
+    <p>📍 Shop No. 22, Shreenathji Society 2, Nilgiri Godadhra Road, Surat, Gujarat 394210, India </p>
+    <p>📞 <a href="tel:09662504082" style="color:#d4af37; text-decoration:none;">+91 96625 04082</a> </p>
     <p>📧 kachhadiyarbhavesh@gmail.com</p>
-    <p>🏙️ Service Area: Nilgiri, Limbayat, Godadara, Surat</p>
+    <p>🏙️ Service Area: Nilgiri, Limbayat, Surat, Gujarat 395012, India </p>
   </div>
 </section>
 
 <footer>
   <h3>OM SAI OPTICAL</h3>
-  <p>Optical Wholesaler & Retail Eyewear Store</p>
+  <p>Optical Wholesaler & Retail Eyewear Store [cite: 1]</p>
   <p>© 2026 All Rights Reserved</p>
 </footer>
 
@@ -526,7 +524,6 @@ footer h3 {
 </div>
 
 <script>
-  // Mobile Hamburger Toggle
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
