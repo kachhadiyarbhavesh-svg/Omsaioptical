@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Sai Optical Surat | 3D Interactive Eyewear Experience</title>
-<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler & Retailer. Latest designs of fancy frames, sunglasses, computerized eye testing, and progressive lenses.">
+<title>Om Sai Optical Surat | 3D Animated Eyewear Experience</title>
+<meta name="description" content="Om Sai Optical Surat - Optical Wholesaler. Latest designs of fancy frames, sunglasses, eye testing, and progressive lenses.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
@@ -19,39 +19,50 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background: #050505;
+  background: #030303;
   color: #fff;
   padding-bottom: 65px;
   overflow-x: hidden;
   position: relative;
 }
 
-/* 3D Moving Ambient Canvas Background */
-.bg-glow-1, .bg-glow-2 {
+/* Background Animated Canvas */
+#particles-canvas {
   position: fixed;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  filter: blur(140px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   pointer-events: none;
-  animation: floatGlow 12s infinite alternate ease-in-out;
 }
-.bg-glow-1 {
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(0,0,0,0) 70%);
-  top: 10%;
-  left: -100px;
+
+/* Animated Ambient Glow Spheres */
+.glow-sphere-1, .glow-sphere-2 {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(150px);
+  z-index: -2;
+  pointer-events: none;
+  animation: moveGlow 14s infinite alternate ease-in-out;
 }
-.bg-glow-2 {
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.18) 0%, rgba(0,0,0,0) 70%);
-  bottom: 15%;
-  right: -100px;
-  animation-duration: 16s;
+.glow-sphere-1 {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(0,0,0,0) 70%);
+  top: 5%;
+  left: -120px;
 }
-@keyframes floatGlow {
+.glow-sphere-2 {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(0,0,0,0) 70%);
+  bottom: 10%;
+  right: -120px;
+  animation-duration: 18s;
+}
+@keyframes moveGlow {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(80px, 60px) scale(1.15); }
-  100% { transform: translate(-40px, 120px) scale(0.95); }
+  50% { transform: translate(100px, 80px) scale(1.2); }
+  100% { transform: translate(-60px, 140px) scale(0.9); }
 }
 
 .container {
@@ -60,15 +71,15 @@ body {
   margin: auto;
 }
 
-/* 3D Glassmorphism Sticky Header */
+/* Animated Header */
 header {
   background: rgba(8, 8, 8, 0.85);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
   padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
   box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 .navbar {
@@ -79,16 +90,16 @@ header {
 .logo {
   font-size: 22px;
   font-weight: 900;
-  background: linear-gradient(135deg, #ffffff 0%, #d4af37 60%, #aa8010 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #aa8010 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shimmerText 4s linear infinite;
   text-decoration: none;
   letter-spacing: 0.5px;
-  filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.4));
-  transition: transform 0.3s;
 }
-.logo:hover {
-  transform: scale(1.03);
+@keyframes shimmerText {
+  to { background-position: 200% center; }
 }
 
 nav ul {
@@ -102,17 +113,31 @@ nav ul li a {
   color: #e0e0e0;
   font-weight: 500;
   font-size: 14.5px;
+  position: relative;
   transition: all 0.3s;
 }
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
 nav ul li a:hover {
-  color: #d4af37;
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
+  color: #ffd700;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
 }
 
-/* Tactile 3D Buttons */
+/* 3D Animated Buttons */
 .btn-3d {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 26px;
   background: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #997819 100%);
   color: #000 !important;
   text-decoration: none;
@@ -123,10 +148,15 @@ nav ul li a:hover {
   transform: translateY(0);
   transition: all 0.15s ease-in-out;
   cursor: pointer;
+  animation: pulseBtn 3s infinite ease-in-out;
+}
+@keyframes pulseBtn {
+  0%, 100% { box-shadow: 0 6px 0 #6e540b, 0 12px 25px rgba(212,175,55,0.3); }
+  50% { box-shadow: 0 6px 0 #6e540b, 0 16px 35px rgba(212,175,55,0.6); }
 }
 .btn-3d:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 #6e540b, 0 16px 30px rgba(212,175,55,0.4);
+  box-shadow: 0 8px 0 #6e540b, 0 18px 30px rgba(212,175,55,0.5);
 }
 .btn-3d:active {
   transform: translateY(4px);
@@ -135,7 +165,7 @@ nav ul li a:hover {
 
 .btn-outline-3d {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 26px;
   background: rgba(37, 211, 102, 0.08);
   color: #25d366 !important;
   text-decoration: none;
@@ -150,7 +180,7 @@ nav ul li a:hover {
   background: #25d366;
   color: #000 !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 #0d5c2a, 0 16px 30px rgba(37,211,102,0.4);
+  box-shadow: 0 8px 0 #0d5c2a, 0 16px 30px rgba(37,211,102,0.5);
 }
 .btn-outline-3d:active {
   transform: translateY(4px);
@@ -175,22 +205,28 @@ nav ul li a:hover {
 }
 @keyframes heroFloat {
   0% { transform: translateY(0px) rotateX(0deg); }
-  100% { transform: translateY(-8px) rotateX(2deg); }
+  100% { transform: translateY(-10px) rotateX(2.5deg); }
 }
 
 .hero-badge {
   display: inline-block;
-  padding: 7px 18px;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  padding: 8px 20px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.5);
   border-radius: 30px;
   color: #ffd700;
   font-size: 13px;
   font-weight: 700;
-  margin-bottom: 22px;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
   backdrop-filter: blur(8px);
+  animation: badgeGlow 3s infinite alternate ease-in-out;
 }
+@keyframes badgeGlow {
+  0% { border-color: rgba(212, 175, 55, 0.3); box-shadow: 0 0 10px rgba(212,175,55,0.2); }
+  100% { border-color: rgba(255, 215, 0, 0.9); box-shadow: 0 0 25px rgba(212,175,55,0.5); }
+}
+
 .hero-content h1 {
   font-size: 56px;
   line-height: 1.15;
@@ -210,9 +246,10 @@ nav ul li a:hover {
   line-height: 1.6;
 }
 
-/* 3D Section Headers */
+/* Sections */
 .section {
   padding: 90px 0;
+  position: relative;
 }
 .section-title {
   text-align: center;
@@ -225,7 +262,7 @@ nav ul li a:hover {
   text-shadow: 0 5px 25px rgba(212, 175, 55, 0.5);
 }
 
-/* 3D Tilt Card Grid */
+/* 3D Animated Tilt Cards */
 .services-3d-grid, .products-3d-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -233,9 +270,9 @@ nav ul li a:hover {
 }
 
 .tilt-card {
-  background: linear-gradient(145deg, rgba(28, 24, 15, 0.8) 0%, rgba(10, 10, 10, 0.95) 100%);
+  background: linear-gradient(145deg, rgba(28, 24, 15, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
   border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 35px 25px;
   text-align: center;
   transform-style: preserve-3d;
@@ -243,21 +280,33 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.4s;
+  animation: cardFloat 6s ease-in-out infinite alternate;
 }
+.tilt-card:nth-child(even) {
+  animation-delay: 1.5s;
+}
+@keyframes cardFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
 .tilt-card:hover {
   border-color: #ffd700;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.35);
-}
-.tilt-inner {
-  transform: translateZ(40px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.4);
 }
 .card-icon {
-  font-size: 48px;
+  font-size: 50px;
   margin-bottom: 15px;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.7));
   transform: translateZ(50px);
+  animation: bounceIcon 3s infinite ease-in-out;
 }
+@keyframes bounceIcon {
+  0%, 100% { transform: translateZ(50px) translateY(0); }
+  50% { transform: translateZ(60px) translateY(-5px) scale(1.08); }
+}
+
 .tilt-card h3 {
   font-size: 20px;
   color: #ffd700;
@@ -272,20 +321,29 @@ nav ul li a:hover {
   transform: translateZ(25px);
 }
 
-/* 3D Product Display */
+/* 3D Products Display */
 .product-tilt {
   background: #0f0f0f;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(212, 175, 55, 0.25);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
   transform-style: preserve-3d;
+  transition: all 0.4s ease;
+}
+.product-tilt:hover {
+  border-color: #ffd700;
+  transform: translateY(-10px) scale(1.03);
 }
 .product-tilt img {
   width: 100%;
   height: 240px;
   object-fit: cover;
   transform: translateZ(20px);
+  transition: transform 0.5s ease;
+}
+.product-tilt:hover img {
+  transform: translateZ(30px) scale(1.08);
 }
 .product-tilt h3 {
   padding: 18px;
@@ -311,7 +369,7 @@ nav ul li a:hover {
   background: #fff;
 }
 
-/* Contact Hub */
+/* Contact Card */
 .contact-card-3d {
   background: linear-gradient(145deg, #181510 0%, #080808 100%);
   border: 1px solid rgba(212, 175, 55, 0.35);
@@ -341,7 +399,7 @@ footer h3 {
   margin-bottom: 6px;
 }
 
-/* Mobile Bottom Bar */
+/* Mobile Bottom Sticky Bar */
 .mobile-bottom-bar {
   display: none;
   position: fixed;
@@ -415,8 +473,9 @@ footer h3 {
 </head>
 <body>
 
-<div class="bg-glow-1"></div>
-<div class="bg-glow-2"></div>
+<canvas id="particles-canvas"></canvas>
+<div class="glow-sphere-1"></div>
+<div class="glow-sphere-2"></div>
 
 <header>
   <div class="container navbar">
@@ -443,17 +502,17 @@ footer h3 {
   <div class="container hero-content">
     <div class="hero-badge">✨ Optical Wholesaler & Premium Eyewear Hub</div>
     <h1>SEE <span>BETTER</span><br>LOOK <span>BETTER</span></h1>
-    <p>We are selling the latest designs and various types of sunglasses, fancy frames, blue cut lenses, and advanced computerized eye testing.</p>
+    <p>Selling the latest designs and various types of sunglasses, fancy frames, blue cut lenses, and computerized eye testing.</p>
     <a href="#appointment" class="btn-3d">Book Eye Test</a>
     <a href="https://wa.me/919662504082" target="_blank" class="btn-outline-3d" style="margin-left: 10px;">WhatsApp Us</a>
   </div>
 </section>
 
 <section class="section" id="services">
-  <h2 class="section-title">Our 3D Services</h2>
+  <h2 class="section-title">Our Animated 3D Services</h2>
   <div class="container services-3d-grid">
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
-      <div class="tilt-inner">
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+      <div>
         <div class="card-icon">👁️</div>
         <h3>Eye Testing</h3>
         <p>Advanced computerized precision eye examination with accurate power analysis.</p>
@@ -461,8 +520,8 @@ footer h3 {
       <a href="#appointment" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Book Eye Test</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
-      <div class="tilt-inner">
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+      <div>
         <div class="card-icon">👓</div>
         <h3>Progressive Lenses</h3>
         <p>Multicoated vision providing clarity across distance, intermediate, and reading zones.</p>
@@ -470,8 +529,8 @@ footer h3 {
       <a href="#appointment" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Book Consultation</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
-      <div class="tilt-inner">
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+      <div>
         <div class="card-icon">🛡️</div>
         <h3>Blue Cut & UV Filter</h3>
         <p>Anti-glare screen protection guarding against mobile, laptop, and digital screen strain.</p>
@@ -479,8 +538,8 @@ footer h3 {
       <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">View Lenses</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
-      <div class="tilt-inner">
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+      <div>
         <div class="card-icon">🕶️</div>
         <h3>Fancy Frames Wholesale</h3>
         <p>Extensive wholesale and retail collections of stylish, lightweight fancy frames.</p>
@@ -488,8 +547,8 @@ footer h3 {
       <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">Explore Designs</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
-      <div class="tilt-inner">
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+      <div>
         <div class="card-icon">👁️‍🗨️</div>
         <h3>Contact Lenses</h3>
         <p>Daily disposable, monthly wear, and cosmetic colored high-moisture contact lenses.</p>
@@ -497,8 +556,8 @@ footer h3 {
       <a href="#products" class="btn-3d" style="padding: 8px 16px; font-size: 13px;">View Collection</a>
     </div>
 
-    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.2">
-      <div class="tilt-inner">
+    <div class="tilt-card" data-tilt data-tilt-max="15" data-tilt-glare data-tilt-max-glare="0.25">
+      <div>
         <div class="card-icon">🔧</div>
         <h3>Frame Repair & Fitting</h3>
         <p>Instant precision alignment, nose-pad replacements, screw tightening, and servicing.</p>
@@ -509,7 +568,7 @@ footer h3 {
 </section>
 
 <section class="section" id="products">
-  <h2 class="section-title">Our Collection</h2>
+  <h2 class="section-title">Our 3D Collection</h2>
   <div class="container products-3d-grid">
     <div class="product-tilt" data-tilt data-tilt-max="10">
       <img src="https://images.unsplash.com/photo-1577803645773-f96470509666" alt="Spectacles">
@@ -583,7 +642,7 @@ footer h3 {
 </div>
 
 <script>
-  // Mobile Hamburger Toggle
+  // Mobile Hamburger Menu
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -595,13 +654,79 @@ footer h3 {
     navMenu.classList.remove('active');
   }
 
-  // Initialize 3D VanillaTilt on Cards
+  // Initialize VanillaTilt for 3D tilt effects
   VanillaTilt.init(document.querySelectorAll(".tilt-card, .product-tilt, .contact-card-3d"), {
-    max: 12,
-    speed: 400,
+    max: 14,
+    speed: 450,
     glare: true,
     "max-glare": 0.25
   });
+
+  // Animated Background Particles
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  const particlesArray = [];
+  const numberOfParticles = Math.min(window.innerWidth / 20, 65);
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = (Math.random() - 0.5) * 0.6;
+      this.speedY = (Math.random() - 0.5) * 0.6;
+      this.color = 'rgba(212, 175, 55, ' + (Math.random() * 0.4 + 0.2) + ')';
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x > canvas.width) this.x = 0;
+      else if (this.x < 0) this.x = canvas.width;
+      if (this.y > canvas.height) this.y = 0;
+      else if (this.y < 0) this.y = canvas.height;
+    }
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < numberOfParticles; i++) {
+    particlesArray.push(new Particle());
+  }
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+      particlesArray[i].update();
+      particlesArray[i].draw();
+      for (let j = i; j < particlesArray.length; j++) {
+        const dx = particlesArray[i].x - particlesArray[j].x;
+        const dy = particlesArray[i].y - particlesArray[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < 110) {
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(212, 175, 55, ' + (0.15 - distance / 110 * 0.15) + ')';
+          ctx.lineWidth = 0.6;
+          ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+          ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
 </script>
 
 </body>
